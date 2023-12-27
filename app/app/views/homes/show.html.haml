@@ -1,0 +1,6 @@
+- if logged_in?
+  = current_administrator.email
+  = current_administrator.name
+  = button_to 'ログアウト', auth_logout_path, method: :delete
+- else
+  = link_to 'ログイン', new_auth_session_path

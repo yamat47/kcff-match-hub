@@ -21,7 +21,6 @@ require 'action_view/railtie'
 Bundler.require(*Rails.groups)
 
 module KcffMatchHub
-  # rubocop:disable Style/Documentation
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
@@ -48,5 +47,4 @@ module KcffMatchHub
       system("bundle exec rubocop --autocorrect-all #{files.join(' ')}", exception: true)
     end
   end
-  # rubocop:enable Style/Documentation
 end

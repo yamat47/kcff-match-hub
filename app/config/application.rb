@@ -41,6 +41,12 @@ module KcffMatchHub
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Execute rubocop after generating files
+    # See: https://koic.hatenablog.com/entry/rubocop-auto-correct-after-generate-with-rails-61
+    config.generators.after_generate do |files|
+      system("bundle exec rubocop --autocorrect-all #{files.join(' ')}", exception: true)
+    end
   end
   # rubocop:enable Style/Documentation
 end

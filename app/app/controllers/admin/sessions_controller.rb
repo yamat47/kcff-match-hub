@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Auth
+module Admin
   class SessionsController < ApplicationController
     skip_before_action :check_logged_in, only: %i[new create]
 
@@ -12,7 +12,7 @@ module Auth
 
       session[:administrator_id] = administrator.id
 
-      redirect_to root_path
+      redirect_to admin_root_path
     end
 
     def destroy

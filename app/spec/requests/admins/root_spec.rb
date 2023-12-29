@@ -14,7 +14,7 @@ RSpec.describe 'GET /admin' do
   end
 
   context 'when logged in' do
-    let(:administrator) { Administrator.create!(email: 'sample-hogehoge@example.com', name: 'hoge') }
+    let(:administrator) { create(:administrator) }
 
     before do
       signin_admin(administrator:)

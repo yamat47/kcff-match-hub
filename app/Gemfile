@@ -20,6 +20,8 @@ gem 'tzinfo-data'
 
 group :development, :test do
   gem 'debug', platforms: %i[mri windows]
+  gem 'factory_bot_rails'
+  gem 'faker'
   gem 'haml_lint', require: false
   gem 'rspec-rails', require: false
   gem 'rubocop', require: false

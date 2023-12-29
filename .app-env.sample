@@ -3,3 +3,6 @@ RAILS_ENV=
 
 GOOGLE_CLIENT_ID=
 GOOGLE_CLIENT_SECRET=
+
+# set `true` to use fake auth
+USE_FAKE_AUTH=

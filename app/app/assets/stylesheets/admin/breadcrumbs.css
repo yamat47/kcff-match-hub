@@ -1,0 +1,21 @@
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .breadcrumbs__item:last-child {
+    font-weight: bold;
+  }
+}
+
+.breadcrumb, .breadcrumb-separator {
+  font-size: 0.75rem;
+}
+
+a.breadcrumb:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-separator {
+  color: #cccccc;
+}

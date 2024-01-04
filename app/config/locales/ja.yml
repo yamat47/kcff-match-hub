@@ -1,0 +1,8 @@
+ja:
+  view:
+    admin:
+      breadcrumbs:
+        root: KCFF Match Hub
+        dashboard: ダッシュボード
+        administrators:
+          index: 管理者

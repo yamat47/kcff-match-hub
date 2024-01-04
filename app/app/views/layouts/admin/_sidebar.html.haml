@@ -1,0 +1,26 @@
+.sidebar
+  .sidebar__logo
+    .sidebar-logo
+      = image_tag 'logo.svg', alt: 'KCFF Match Hub'
+  .sidebar__profile
+    .sidebar-profile
+      .sidebar-profile__image
+        = image_tag 'icon-user.png'
+      .sidebar-profile__main
+        .sidebar-profile-main
+          .sidebar-profile-main__name
+            ID:
+            = current_administrator.name
+          .sidebar-profile-main__email
+            = current_administrator.email
+  .sidebar__navigations
+    .sidebar-navigations
+      .sidebar-navigations__item
+        = link_to '/admin/administrators', class: 'sidebar-navigations-item' do
+          .sidebar-navigations-item__icon
+            = image_tag 'icon-administrator.png'
+          .sidebar-navigations-item__label
+            管理者
+  .sidebar__logout
+    .sidebar-logout
+      = button_to 'ログアウト', admin_session_path, method: :delete, class: 'sidebar-logout-button'

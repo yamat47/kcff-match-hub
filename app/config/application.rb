@@ -46,5 +46,8 @@ module KcffMatchHub
     config.generators.after_generate do |files|
       system("bundle exec rubocop --autocorrect-all #{files.join(' ')}", exception: true)
     end
+
+    # Sets the default locale of the application to Japanese (:ja).
+    config.i18n.default_locale = :ja
   end
 end

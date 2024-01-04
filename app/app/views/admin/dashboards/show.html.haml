@@ -1,3 +1,6 @@
+:ruby
+  add_breadcrumb t('view.admin.breadcrumbs.dashboard')
+
 - if logged_in?
   = current_administrator.email
   = current_administrator.name

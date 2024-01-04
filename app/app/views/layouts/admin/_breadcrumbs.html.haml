@@ -1,0 +1,12 @@
+.breadcrumbs
+  - breadcrumbs.each.with_index(1) do |breadcrumb, index|
+    - if index == breadcrumbs.size
+      .breadcrumbs__item
+        %span.breadcrumb
+          = breadcrumb.name
+    - else
+      .breadcrumbs__item
+        = link_to breadcrumb.name, breadcrumb.path, class: 'breadcrumb'
+      .breadcrumbs__item
+        .breadcrumb-separator
+          &sol;

@@ -7,9 +7,17 @@
     = csp_meta_tag
     = stylesheet_link_tag 'admin', 'data-turbo-track': 'reload'
   %body
-    .application
-      - if logged_in?
+    - if logged_in?
+      .application
         .application__sidebar
           = render 'layouts/admin/sidebar'
-      .application__main
-        = yield
+        .application__main
+          .application-main
+            .application-main__breadcrumbs
+              = render 'layouts/admin/breadcrumbs', breadcrumbs:
+            .application-main__content
+              = yield
+    - else
+      .application
+        .application__main
+          = yield

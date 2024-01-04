@@ -25,5 +25,20 @@ module Admin
 
       redirect_to new_admin_session_path
     end
+
+    def breadcrumbs
+      if defined?(@breadcrumbs)
+        @breadcrumbs
+      else
+        root_breadcrumb = Breadcrumb.new(name: I18n.t('view.admin.breadcrumbs.root'), path: admin_root_path)
+        @breadcrumbs = [root_breadcrumb]
+      end
+    end
+    helper_method :breadcrumbs
+
+    def add_breadcrumb(name, path = nil)
+      breadcrumbs << Breadcrumb.new(name:, path:)
+    end
+    helper_method :add_breadcrumb
   end
 end

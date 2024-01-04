@@ -52,6 +52,40 @@
   flex: 1;
 }
 
+.sidebar-navigations {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sidebar-navigations__item {
+  padding: 0 8px;
+}
+
+.sidebar-navigations-item {
+  padding: 8px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  border-radius: 4px;
+
+  &:hover {
+    background-color: #eeeeee;
+    cursor: pointer;
+    font-weight: semi-bold;
+  }
+}
+
+.sidebar-navigations-item__icon {
+  width: 24px;
+  height: 24px;
+}
+
+.sidebar-navigations-item__label {
+  font-size: 0.875rem;
+}
+
 .sidebar-logout {
   padding: 0 24px;
 }

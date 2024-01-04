@@ -14,7 +14,13 @@
           .sidebar-profile-main__email
             = current_administrator.email
   .sidebar__navigations
-    -# FIXME
+    .sidebar-navigations
+      .sidebar-navigations__item
+        = link_to '/admin/administrators', class: 'sidebar-navigations-item' do
+          .sidebar-navigations-item__icon
+            = image_tag 'icon-administrator.png'
+          .sidebar-navigations-item__label
+            管理者
   .sidebar__logout
     .sidebar-logout
       = button_to 'ログアウト', admin_session_path, method: :delete, class: 'sidebar-logout-button'

@@ -15,3 +15,6 @@
             = current_administrator.email
   .sidebar__navigations
     -# FIXME
+  .sidebar__logout
+    .sidebar-logout
+      = button_to 'ログアウト', admin_session_path, method: :delete, class: 'sidebar-logout-button'

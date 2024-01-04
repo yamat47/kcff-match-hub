@@ -8,7 +8,8 @@
     = stylesheet_link_tag 'admin', 'data-turbo-track': 'reload'
   %body
     .application
-      .application__sidebar
-        = render 'layouts/admin/sidebar'
+      - if logged_in?
+        .application__sidebar
+          = render 'layouts/admin/sidebar'
       .application__main
         = yield

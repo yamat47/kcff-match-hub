@@ -1,0 +1,12 @@
+.application {
+  display: flex;
+  min-height: 100vh;
+
+  .application__sidebar {
+    width: 240px;
+  }
+
+  .application__main {
+    flex: 1;
+  }
+}

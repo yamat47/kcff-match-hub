@@ -2,6 +2,8 @@
 
 module Admin
   class ApplicationController < ::ApplicationController
+    layout 'admin/application'
+
     before_action :check_logged_in
 
     private

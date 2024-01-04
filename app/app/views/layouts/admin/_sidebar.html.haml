@@ -1,0 +1,17 @@
+.sidebar
+  .sidebar__logo
+    .sidebar-logo
+      = image_tag 'logo.svg', alt: 'KCFF Match Hub'
+  .sidebar__profile
+    .sidebar-profile
+      .sidebar-profile__image
+        = image_tag 'icon-user.png'
+      .sidebar-profile__main
+        .sidebar-profile-main
+          .sidebar-profile-main__name
+            ID:
+            = current_administrator.name
+          .sidebar-profile-main__email
+            = current_administrator.email
+  .sidebar__navigations
+    -# FIXME

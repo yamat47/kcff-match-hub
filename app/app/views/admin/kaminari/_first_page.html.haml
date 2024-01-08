@@ -1,0 +1,5 @@
+- if current_page.first?
+  %span.admin-pagination-first.is-current
+    = t('views.pagination.first').html_safe
+- else
+  = link_to t('views.pagination.first').html_safe, url, { remote:, class: 'admin-pagination-first' }

@@ -1,0 +1,5 @@
+- if page.current?
+  %span.admin-pagination-page.is-current
+    = page
+- else
+  = link_to page, url, { remote:, rel: page.rel, class: 'admin-pagination-page' }

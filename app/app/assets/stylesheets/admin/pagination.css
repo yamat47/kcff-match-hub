@@ -1,0 +1,56 @@
+.admin-pagination {
+  display: flex;
+  gap: 0.25rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-pagination-first,
+.admin-pagination-prev,
+.admin-pagination-gap,
+.admin-pagination-page,
+.admin-pagination-next,
+.admin-pagination-last {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.5rem;
+  padding: 0.25rem 0.75rem;
+}
+
+.admin-pagination-gap,
+.admin-pagination-page {
+  font-size: 0.875rem;
+}
+
+.admin-pagination-first,
+.admin-pagination-prev,
+.admin-pagination-next,
+.admin-pagination-last {
+  font-size: 1rem;
+}
+
+.admin-pagination-first,
+.admin-pagination-prev,
+.admin-pagination-page,
+.admin-pagination-next,
+.admin-pagination-last {
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+
+  &:hover {
+    border-color: var(--default-border-color);
+  }
+}
+
+.admin-pagination-page {
+  &.is-current {
+    background-color: var(--color-primary-500);
+    color: var(--color-white);
+    font-weight: bold;
+
+    &:hover {
+      border-color: var(--color-primary-500);
+    }
+  }
+}

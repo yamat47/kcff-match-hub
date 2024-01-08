@@ -17,5 +17,5 @@ a.breadcrumb:hover {
 }
 
 .breadcrumb-separator {
-  color: #cccccc;
+  color: var(--color-gray-500);
 }

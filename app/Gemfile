@@ -8,6 +8,7 @@ gem 'bootsnap', require: false
 gem 'haml-rails'
 gem 'importmap-rails'
 gem 'jbuilder'
+gem 'kaminari'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
 gem 'pg'

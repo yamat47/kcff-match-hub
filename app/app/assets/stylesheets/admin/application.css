@@ -14,17 +14,18 @@
 .application-main {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
 
   .application-main__breadcrumbs, .application-main__content {
     padding: 8px 12px;
   }
 
   .application-main__breadcrumbs {
-    border-bottom: 1px solid #cccccc;
+    border-bottom: 1px solid var(--default-border-color);
   }
 
   .application-main__content {
     flex: 1;
+    overflow-y: auto;
   }
 }

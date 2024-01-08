@@ -71,7 +71,7 @@
   border-radius: 4px;
 
   &:hover {
-    background-color: #eeeeee;
+    background-color: var(--color-gray-900);
     cursor: pointer;
     font-weight: semi-bold;
   }
@@ -101,12 +101,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #3AA674;
-  border: solid 1px #3AA674;
+  color: var(--color-primary-500);
+  border: solid 1px var(--color-primary-500);
   border-radius: 8px;
 
   &:hover {
-    background-color: #ebf6f1;
+    background-color: var(--color-primary-900);
     cursor: pointer;
     font-weight: semi-bold;
   }

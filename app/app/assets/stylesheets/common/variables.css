@@ -1,0 +1,13 @@
+:root {
+  --color-primary-500: #3aa674;
+  --color-primary-900: #ebf6f1;
+
+  --color-gray-100: #333333;
+  --color-gray-300: #666666;
+  --color-gray-500: #cccccc;
+  --color-gray-900: #eeeeee;
+
+  --color-white: #ffffff;
+
+  --default-border-color: var(--color-gray-500);
+}

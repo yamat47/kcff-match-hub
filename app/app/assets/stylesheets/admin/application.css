@@ -21,7 +21,7 @@
   }
 
   .application-main__breadcrumbs {
-    border-bottom: 1px solid #cccccc;
+    border-bottom: 1px solid var(--default-border-color);
   }
 
   .application-main__content {

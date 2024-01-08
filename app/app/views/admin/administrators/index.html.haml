@@ -1,0 +1,24 @@
+:ruby
+  add_breadcrumb t('view.admin.breadcrumbs.administrators.index')
+
+.admin-list-container
+  .admin-list-container__main
+    %table.admin-list
+      %thead.admin-list__header.admin-list-header
+        %tr.admin-list-row
+          %th.admin-list-cell.is-header
+            = Administrator.human_attribute_name :name
+          %th.admin-list-cell.is-header
+            = Administrator.human_attribute_name :email
+      %tbody.admin-list__body.admin-list-body
+        - @administrators.each do |administrator|
+          %tr.admin-list-row
+            %td.admin-list-cell
+              .admin-list-cell-with-icon
+                = image_tag 'icon-administrator.png', class: 'admin-list-cell-with-icon__icon'
+                .admin-list-cell-with-icon__text
+                  = link_to administrator.name, admin_administrator_path(administrator)
+            %td.admin-list-cell
+              = link_to administrator.email, admin_administrator_path(administrator)
+  .admin-list-container__pagination
+    = paginate @administrators, views_prefix: 'admin'

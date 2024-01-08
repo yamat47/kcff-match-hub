@@ -14,3 +14,9 @@ ja:
       previous: "&lsaquo;"
       next: "&rsaquo;"
       truncate: "&hellip;"
+
+  activerecord:
+    attributes:
+      administrator:
+        name: ID
+        email: メールアドレス

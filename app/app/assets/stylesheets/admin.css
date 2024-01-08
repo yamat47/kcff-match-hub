@@ -1,6 +1,10 @@
+/* Reset CSS must be loaded first to ensure style consistency */
 @import url('common/reset.css');
+
 @import url('common/font.css');
 
 @import url('admin/application.css');
 @import url('admin/breadcrumbs.css');
+@import url('admin/list-container.css');
+@import url('admin/pagination.css');
 @import url('admin/sidebar.css');

@@ -6,3 +6,11 @@ ja:
         dashboard: ダッシュボード
         administrators:
           index: 管理者
+
+  views:
+    pagination:
+      first: "&laquo;"
+      last: "&raquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+      truncate: "&hellip;"

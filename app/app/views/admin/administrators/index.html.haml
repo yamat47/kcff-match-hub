@@ -1,8 +1,17 @@
 :ruby
   add_breadcrumb t('view.admin.breadcrumbs.administrators.index')
 
-.admin-list-container
-  .admin-list-container__main
+.admin-list_container
+  .admin-list-container__header
+    .admin-list-navigation
+      .admin-list-navigation__search
+        // FIXME: Implement search
+      .admin-list-navigation__actions
+        .admin-list-navigation-actions
+          .admin-list-navigation-actions__action
+            = link_to t('view.admin.button.new'), new_admin_administrator_path,
+                      class: 'admin-list-navigation-action_button'
+  .admin-list_container__main
     %table.admin-list
       %thead.admin-list__header.admin-list-header
         %tr.admin-list-row
@@ -20,5 +29,5 @@
                   = link_to administrator.name, admin_administrator_path(administrator)
             %td.admin-list-cell
               = link_to administrator.email, admin_administrator_path(administrator)
-  .admin-list-container__pagination
+  .admin-list_container__pagination
     = paginate @administrators, views_prefix: 'admin'

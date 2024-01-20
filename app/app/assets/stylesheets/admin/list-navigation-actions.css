@@ -1,0 +1,26 @@
+.admin-list-navigation-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  .admin-title-actions__action {
+    height: 2rem;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.admin-list-navigation-action_button {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: var(--button-border-radius);
+  background-color: var(--color-primary-500);
+  color: var(--color-white);
+  font-size: 0.875rem;
+  font-weight: bold;
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--color-primary-700);
+  }
+}

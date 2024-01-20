@@ -1,0 +1,12 @@
+.admin-title-action_button {
+  padding: 8px 12px;
+  border: solid 1px var(--color-gray-500);
+  border-radius: var(--button-border-radius);
+  color: var(--color-gray-500);
+  font-size: 0.875rem;
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--color-gray-900);
+  }
+}

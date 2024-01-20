@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
     resource :session, only: %i[new create destroy]
     resource :dashboards, only: [:show]
-    resources :administrators, only: %i[index destroy]
+    resources :administrators
   end
 
   namespace :auth do

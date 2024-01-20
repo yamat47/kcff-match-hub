@@ -1,0 +1,14 @@
+.admin-field {
+  height: 2rem;
+  display: flex;
+  gap: 1rem;
+
+  .admin-field__label, .admin-field__value {
+    display: flex;
+    align-items: center;
+  }
+
+  .admin-field__label {
+    font-weight: bold;
+  }
+}

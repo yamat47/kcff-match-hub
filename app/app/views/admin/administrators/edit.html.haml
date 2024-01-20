@@ -1,0 +1,17 @@
+:ruby
+  add_breadcrumb t('view.admin.breadcrumbs.administrators.index'), admin_administrators_path
+  add_breadcrumb @administrator.name, admin_administrator_path(@administrator)
+  add_breadcrumb t('view.admin.breadcrumbs.actions.edit')
+
+.admin-content
+  .admin-content__title
+    .admin-title
+      .admin-title__image
+        = image_tag 'icon-administrator.png', class: 'admin-title-image'
+      .admin-title__text
+        %h1.admin-title_text
+          = @administrator.name
+
+  .admin-content__fields
+    = render 'form', administrator: @administrator, url: admin_administrator_path(@administrator),
+                     cancel_path: admin_administrator_path(@administrator)

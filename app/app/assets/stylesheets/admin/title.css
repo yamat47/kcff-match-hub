@@ -1,0 +1,14 @@
+.admin-title {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  .admin-title__image {
+    height: 3rem;
+  }
+
+  .admin-title__text {
+    flex: 1
+  }
+}

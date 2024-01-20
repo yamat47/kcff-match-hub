@@ -1,13 +1,25 @@
 :root {
+  /* Color generator: https://colorbase.app/ja/tools/generator */
   --color-primary-500: #3aa674;
+  --color-primary-700: #89caac;
   --color-primary-900: #ebf6f1;
 
-  --color-gray-100: #333333;
-  --color-gray-300: #666666;
-  --color-gray-500: #cccccc;
-  --color-gray-900: #eeeeee;
+  --color-red-100: #2f0608;
+  --color-red-300: #8c1317;
+  --color-red-500: #ea2027;
+  --color-red-700: #f2797d;
+  --color-red-900: #fde9e9;
+
+  --color-gray-100: #161616;
+  --color-gray-300: #434343;
+  --color-gray-500: #707070;
+  --color-gray-700: #a9a9a9;
+  --color-gray-900: #f1f1f1;
 
   --color-white: #ffffff;
 
-  --default-border-color: var(--color-gray-500);
+  --default-border-color: var(--color-gray-700);
+
+  --button-border-radius: 0.5rem;
+  --input-border-radius: 0.25rem;
 }

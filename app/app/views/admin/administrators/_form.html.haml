@@ -1,0 +1,30 @@
+= form_with model: administrator, url:, local: true do |form|
+  .admin-fields
+    .admin-fields__field
+      .admin-field
+        .admin-field__label
+          = Administrator.human_attribute_name(:name)
+        .admin-field__value
+          - if administrator.persisted?
+            = form.text_field :name, class: 'admin-form-text_field', readonly: true
+          - else
+            = t('view.admin.supplement.administrators.name_auto_generated')
+    .admin-fields__field
+      .admin-field
+        .admin-field__label
+          = Administrator.human_attribute_name(:email)
+        .admin-field__value
+          = form.email_field :email, class: 'admin-form-text_field is-long', required: true
+    - if administrator.errors.any?
+      .admin-fields__field
+        .admin-form-errors
+          %ul.admin-form-error-list
+            - administrator.errors.full_messages.each do |message|
+              %li.admin-form-error-list__item
+                = message
+    .admin-fields__field
+      .admin-form-action_buttons
+        .admin-form-action_buttons__action
+          = form.submit t('view.admin.button.save'), class: 'admin-form-action_button'
+        .admin-form-action_buttons__action
+          = link_to t('view.admin.button.cancel'), cancel_path, class: 'admin-form-action_button is-cancel'

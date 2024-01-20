@@ -1,0 +1,8 @@
+.admin-list-navigation {
+  display: flex;
+  align-items: center;
+
+  .admin-list-navigation__search {
+    flex: 1;
+  }
+}

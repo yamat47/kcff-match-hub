@@ -205,11 +205,14 @@ ja:
         destroy: 削除する
         save: 保存する
         cancel: キャンセル
+        search: 検索する
       confirm:
         destroy: 本当に削除しますか？
       supplement:
         administrators:
           name_auto_generated: データを保存した際に自動で発行されます。
+      placeholder:
+        search: キーワード検索
 
   views:
     pagination:

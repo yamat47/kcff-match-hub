@@ -10,17 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_27_085232) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_21_040807) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "administrators", comment: "管理者", force: :cascade do |t|
     t.string "email", null: false, comment: "メールアドレス"
-    t.string "name", null: false, comment: "名前"
+    t.string "universal_id", null: false, comment: "ユニバーサルID"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_administrators_on_email", unique: true
-    t.index ["name"], name: "index_administrators_on_name", unique: true
+    t.index ["universal_id"], name: "index_administrators_on_universal_id", unique: true
+  end
+
+  create_table "game_fields", comment: "試合会場", force: :cascade do |t|
+    t.string "universal_id", null: false, comment: "ユニバーサルID"
+    t.string "name", null: false, comment: "会場名"
+    t.string "address", null: false, comment: "住所"
+    t.string "google_maps_url", null: false, comment: "GoogleマップURL"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_game_fields_on_name", unique: true
+    t.index ["universal_id"], name: "index_game_fields_on_universal_id", unique: true
   end
 
 end

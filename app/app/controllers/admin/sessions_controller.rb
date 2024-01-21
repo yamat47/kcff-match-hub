@@ -8,7 +8,7 @@ module Admin
 
     def create
       email = omniauth_params.info.email
-      administrator = Administrator.find_or_create_by(email:, &:reset_name)
+      administrator = Administrator.find_or_create_by(email:, &:reset_universal_id)
 
       session[:administrator_id] = administrator.id
 

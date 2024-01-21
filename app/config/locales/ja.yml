@@ -8,7 +8,7 @@ ja:
           has_many: "%{record}が存在しているので削除できません"
     attributes:
       administrator:
-        name: ID
+        universal_id: ID
         email: メールアドレス
 
   date:
@@ -98,9 +98,12 @@ ja:
       exclusion: は予約されています
       greater_than: は%{count}より大きい値にしてください
       greater_than_or_equal_to: は%{count}以上の値にしてください
+      host_not_allowed: は許可されていないホストです
+      https_only: はhttpsのみ有効です
       in: は%{count}の範囲に含めてください
       inclusion: は一覧にありません
       invalid: は不正な値です
+      invalid_prefix: は不正な接頭辞です
       less_than: は%{count}より小さい値にしてください
       less_than_or_equal_to: は%{count}以下の値にしてください
       model_invalid: 'バリデーションに失敗しました: %{errors}'
@@ -194,6 +197,7 @@ ja:
     admin:
       breadcrumbs:
         actions:
+          new: 追加
           edit: 編集
         root: KCFF Match Hub
         dashboard: ダッシュボード
@@ -210,7 +214,7 @@ ja:
         destroy: 本当に削除しますか？
       supplement:
         administrators:
-          name_auto_generated: データを保存した際に自動で発行されます。
+          universal_id_auto_generated: データを保存した際に自動で発行されます。
       placeholder:
         search: キーワード検索
 

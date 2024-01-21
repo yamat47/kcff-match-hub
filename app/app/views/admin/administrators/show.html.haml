@@ -1,6 +1,6 @@
 :ruby
   add_breadcrumb t('view.admin.breadcrumbs.administrators.index'), admin_administrators_path
-  add_breadcrumb @administrator.name
+  add_breadcrumb @administrator.universal_id
 
 .admin-content
   .admin-content__title
@@ -9,7 +9,7 @@
         = image_tag 'icon-administrator.png', class: 'admin-title-image'
       .admin-title__text
         %h1.admin-title_text
-          = @administrator.name
+          = @administrator.universal_id
       .admin-title__actions
         .admin-title-actions
           .admin-title-actions__action
@@ -25,9 +25,9 @@
       .admin-fields__field
         .admin-field
           .admin-field__label
-            = Administrator.human_attribute_name(:name)
+            = Administrator.human_attribute_name(:universal_id)
           .admin-field__value
-            = @administrator.name
+            = @administrator.universal_id
       .admin-fields__field
         .admin-field
           .admin-field__label

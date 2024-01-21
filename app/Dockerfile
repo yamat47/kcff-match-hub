@@ -13,4 +13,12 @@ RUN bundle install
 
 COPY . /app
 
+# Copy entrypoint.sh and make it executable
+COPY entrypoint.sh /usr/bin/entrypoint.sh
+RUN chmod +x /usr/bin/entrypoint.sh
+
 EXPOSE 3000
+
+# Set entrypoint.sh as the ENTRYPOINT
+ENTRYPOINT ["entrypoint.sh"]
+CMD ["rails", "server", "-b", "0.0.0.0"]

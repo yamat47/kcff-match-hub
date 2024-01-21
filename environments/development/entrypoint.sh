@@ -1,5 +1,4 @@
-#!/bin/bash
-# entrypoint.sh
+#!/bin/sh
 
 # PIDファイルが存在すれば削除する
 if [ -f /app/tmp/pids/server.pid ]; then

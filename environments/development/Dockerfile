@@ -4,21 +4,19 @@ RUN apk update && apk add postgresql-client postgresql-dev build-base libxml2-de
 
 WORKDIR /app
 
-COPY Gemfile /app/Gemfile
-COPY Gemfile.lock /app/Gemfile.lock
+COPY ../../app/Gemfile /app/Gemfile
+COPY ../../app/Gemfile.lock /app/Gemfile.lock
 
 RUN gem install bundler
-
 RUN bundle install
 
-COPY . /app
+COPY ../../app /app
 
-# Copy entrypoint.sh and make it executable
-COPY entrypoint.sh /usr/bin/entrypoint.sh
+COPY ../../environments/development/entrypoint.sh /usr/bin/entrypoint.sh
+
 RUN chmod +x /usr/bin/entrypoint.sh
 
 EXPOSE 3000
 
-# Set entrypoint.sh as the ENTRYPOINT
-ENTRYPOINT ["entrypoint.sh"]
+ENTRYPOINT ["/usr/bin/entrypoint.sh"]
 CMD ["rails", "server", "-b", "0.0.0.0"]

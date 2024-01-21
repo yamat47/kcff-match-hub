@@ -4,7 +4,7 @@ class GameField < ApplicationRecord
   validates :universal_id, presence: true, uniqueness: true
   validates :name, presence: true, uniqueness: true
   validates :address, presence: true
-  validates :google_maps_url, presence: true
+  validates :google_maps_url, presence: true, url: { host: /\Amaps\.app\.goo\.gl\Z/ }
 
   before_validation :reset_universal_id, if: -> { universal_id.blank? }
 

@@ -98,6 +98,8 @@ ja:
       exclusion: は予約されています
       greater_than: は%{count}より大きい値にしてください
       greater_than_or_equal_to: は%{count}以上の値にしてください
+      host_not_allowed: は許可されていないホストです
+      https_only: はhttpsのみ有効です
       in: は%{count}の範囲に含めてください
       inclusion: は一覧にありません
       invalid: は不正な値です

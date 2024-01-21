@@ -6,6 +6,7 @@ module Admin
 
     def index
       @administrators = Administrator.name_ordered
+                                     .search_by_keyword(index_params[:search])
                                      .page(index_params[:page])
                                      .per(INDEX_PER_PAGE)
     end
@@ -53,7 +54,7 @@ module Admin
     private
 
     def index_params
-      params.permit(:page)
+      params.permit(:search, :page)
     end
 
     def administrator_params

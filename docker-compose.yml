@@ -2,26 +2,23 @@ version: '3.8'
 
 services:
   app:
-    build: ./app
-    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    build:
+      context: .
+      dockerfile: environments/development/Dockerfile
     volumes:
       - ./app:/app
-    working_dir: /app
     ports:
       - "3000:3000"
+    env_file:
+      - environments/development/.app-env
     depends_on:
       - db
-    env_file:
-      - .app-env
-    stdin_open: true
-    tty: true
-
   db:
-    image: postgres:latest
-    env_file:
-      - .db-env
+    image: postgres:16.1-alpine
     volumes:
       - pgdata:/var/lib/postgresql/data
+    env_file:
+      - environments/development/.db-env
 
 volumes:
   pgdata:

@@ -4,9 +4,9 @@ require 'rails_helper'
 
 RSpec.describe Administrator, type: :model do
   describe 'search_by_keyword scope' do
-    let!(:admin1) { create(:administrator, universal_id: 'Alice Wonderland', email: 'alice@example.com') }
-    let!(:admin2) { create(:administrator, universal_id: 'Bob Builder', email: 'bob@example.com') }
-    let!(:admin3) { create(:administrator, universal_id: 'Charlie Chocolate', email: 'charlie@example.com') }
+    let!(:admin1) { create(:administrator, universal_id: 'adm_Alice_Wonderland', email: 'alice@example.com') }
+    let!(:admin2) { create(:administrator, universal_id: 'adm_Bob_Builder', email: 'bob@example.com') }
+    let!(:admin3) { create(:administrator, universal_id: 'adm_Charlie_Chocolate', email: 'charlie@example.com') }
 
     context 'when a matching universal_id is given' do
       it 'returns administrators with universal_ids that match the query' do

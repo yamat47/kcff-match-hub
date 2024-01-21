@@ -7,6 +7,7 @@ class Administrator < ApplicationRecord
   before_validation :reset_name, if: -> { name.blank? }
 
   scope :name_ordered, -> { order(name: :asc) }
+  scope :search_by_keyword, ->(query) { where('name LIKE :query OR email LIKE :query', query: "%#{query}%") }
 
   # 8文字のランダムな英数字を生成してnameにセットする。
   # ただし既存のレコードと重複しないこともチェックする。

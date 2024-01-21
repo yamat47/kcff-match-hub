@@ -14,7 +14,7 @@ class Administrator < ApplicationRecord
   # 重複していた場合は再度ランダムな英数字を生成してセットする。
   def reset_name
     new_name = loop do
-      candidate = SecureRandom.alphanumeric(8)
+      candidate = "adm_#{SecureRandom.alphanumeric(8)}"
       break candidate unless Administrator.exists?(name: candidate)
     end
 

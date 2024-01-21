@@ -3,7 +3,7 @@
   min-height: 100vh;
 
   .application__sidebar {
-    width: 240px;
+    width: 16rem;
   }
 
   .application__main {

@@ -8,7 +8,7 @@ ja:
           has_many: "%{record}が存在しているので削除できません"
     attributes:
       administrator:
-        name: ID
+        universal_id: ID
         email: メールアドレス
 
   date:
@@ -194,6 +194,7 @@ ja:
     admin:
       breadcrumbs:
         actions:
+          new: 追加
           edit: 編集
         root: KCFF Match Hub
         dashboard: ダッシュボード
@@ -210,7 +211,7 @@ ja:
         destroy: 本当に削除しますか？
       supplement:
         administrators:
-          name_auto_generated: データを保存した際に自動で発行されます。
+          universal_id_auto_generated: データを保存した際に自動で発行されます。
       placeholder:
         search: キーワード検索
 

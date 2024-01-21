@@ -5,7 +5,7 @@ module Admin
     INDEX_PER_PAGE = 30
 
     def index
-      @administrators = Administrator.name_ordered
+      @administrators = Administrator.universal_id_ordered
                                      .search_by_keyword(index_params[:search])
                                      .page(index_params[:page])
                                      .per(INDEX_PER_PAGE)

@@ -16,11 +16,11 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_27_085232) do
 
   create_table "administrators", comment: "管理者", force: :cascade do |t|
     t.string "email", null: false, comment: "メールアドレス"
-    t.string "name", null: false, comment: "名前"
+    t.string "universal_id", null: false, comment: "ユニバーサルID"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_administrators_on_email", unique: true
-    t.index ["name"], name: "index_administrators_on_name", unique: true
+    t.index ["universal_id"], name: "index_administrators_on_universal_id", unique: true
   end
 
 end

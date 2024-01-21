@@ -3,6 +3,6 @@
 FactoryBot.define do
   factory :administrator do
     email { Faker::Internet.email }
-    name { "adm_#{SecureRandom.alphanumeric(8)}" }
+    universal_id { "adm_#{SecureRandom.alphanumeric(8)}" }
   end
 end

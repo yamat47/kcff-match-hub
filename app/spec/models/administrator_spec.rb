@@ -4,12 +4,12 @@ require 'rails_helper'
 
 RSpec.describe Administrator, type: :model do
   describe 'search_by_keyword scope' do
-    let!(:admin1) { create(:administrator, name: 'Alice Wonderland', email: 'alice@example.com') }
-    let!(:admin2) { create(:administrator, name: 'Bob Builder', email: 'bob@example.com') }
-    let!(:admin3) { create(:administrator, name: 'Charlie Chocolate', email: 'charlie@example.com') }
+    let!(:admin1) { create(:administrator, universal_id: 'Alice Wonderland', email: 'alice@example.com') }
+    let!(:admin2) { create(:administrator, universal_id: 'Bob Builder', email: 'bob@example.com') }
+    let!(:admin3) { create(:administrator, universal_id: 'Charlie Chocolate', email: 'charlie@example.com') }
 
-    context 'when a matching name is given' do
-      it 'returns administrators with names that match the query' do
+    context 'when a matching universal_id is given' do
+      it 'returns administrators with universal_ids that match the query' do
         expect(Administrator.search_by_keyword('Alice')).to include(admin1)
         expect(Administrator.search_by_keyword('Alice')).not_to include(admin2, admin3)
       end
@@ -23,7 +23,7 @@ RSpec.describe Administrator, type: :model do
     end
 
     context 'when a partial match is given' do
-      it 'returns administrators with names or emails that contain the query' do
+      it 'returns administrators with universal_ids or emails that contain the query' do
         expect(Administrator.search_by_keyword('lice')).to include(admin1)
         expect(Administrator.search_by_keyword('uilder')).to include(admin2)
         expect(Administrator.search_by_keyword('hoco')).to include(admin3)

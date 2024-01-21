@@ -16,7 +16,13 @@
   .sidebar__navigations
     .sidebar-navigations
       .sidebar-navigations__item
-        = link_to '/admin/administrators', class: 'sidebar-navigations-item' do
+        = link_to admin_game_fields_path, class: 'sidebar-navigations-item' do
+          .sidebar-navigations-item__icon
+            = image_tag 'icon-stadium.png'
+          .sidebar-navigations-item__label
+            試合会場
+      .sidebar-navigations__item
+        = link_to admin_administrators_path, class: 'sidebar-navigations-item' do
           .sidebar-navigations-item__icon
             = image_tag 'icon-administrator.png'
           .sidebar-navigations-item__label

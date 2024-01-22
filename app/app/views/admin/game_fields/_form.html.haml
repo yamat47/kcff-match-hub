@@ -1,25 +1,37 @@
-= form_with model: administrator, url:, local: true do |form|
+= form_with model: game_field, url:, local: true do |form|
   .admin-fields
     .admin-fields__field
       .admin-field
         .admin-field__label
-          = Administrator.human_attribute_name(:name)
+          = GameField.human_attribute_name(:universal_id)
         .admin-field__value
-          - if administrator.persisted?
+          - if game_field.persisted?
             = form.text_field :universal_id, class: 'admin-form-text_field', readonly: true
           - else
             = t('view.admin.supplement.universal_id_auto_generated')
     .admin-fields__field
       .admin-field
         .admin-field__label
-          = Administrator.human_attribute_name(:email)
+          = GameField.human_attribute_name(:name)
         .admin-field__value
-          = form.email_field :email, class: 'admin-form-text_field is-long', required: true
-    - if administrator.errors.any?
+          = form.text_field :name, class: 'admin-form-text_field', required: true
+    .admin-fields__field
+      .admin-field
+        .admin-field__label
+          = GameField.human_attribute_name(:address)
+        .admin-field__value
+          = form.text_field :address, class: 'admin-form-text_field is-long', required: true
+    .admin-fields__field
+      .admin-field
+        .admin-field__label
+          = GameField.human_attribute_name(:google_maps_url)
+        .admin-field__value
+          = form.url_field :google_maps_url, class: 'admin-form-text_field is-long', required: true
+    - if game_field.errors.any?
       .admin-fields__field
         .admin-form-errors
           %ul.admin-form-error-list
-            - administrator.errors.full_messages.each do |message|
+            - game_field.errors.full_messages.each do |message|
               %li.admin-form-error-list__item
                 = message
     .admin-fields__field

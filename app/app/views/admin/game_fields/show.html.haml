@@ -1,0 +1,48 @@
+:ruby
+  add_breadcrumb t('view.admin.breadcrumbs.game_fields.index'), admin_game_fields_path
+  add_breadcrumb @game_field.name
+
+.admin-content
+  .admin-content__title
+    .admin-title
+      .admin-title__image
+        = image_tag 'icon-stadium.png', class: 'admin-title-image'
+      .admin-title__text
+        %h1.admin-title_text
+          = @game_field.name
+      .admin-title__actions
+        .admin-title-actions
+          .admin-title-actions__action
+            = link_to t('view.admin.button.edit'), edit_admin_game_field_path(@game_field),
+                      class: 'admin-title-action_button'
+          .admin-title-actions__action
+            = button_to t('view.admin.button.destroy'), admin_game_field_path(@game_field),
+                        method: :delete, data: data_for_confirm(confirm_message: t('view.admin.confirm.destroy')),
+                        class: 'admin-title-action_button'
+
+  .admin-content__fields
+    .admin-fields
+      .admin-fields__field
+        .admin-field
+          .admin-field__label
+            = GameField.human_attribute_name(:universal_id)
+          .admin-field__value
+            = @game_field.universal_id
+      .admin-fields__field
+        .admin-field
+          .admin-field__label
+            = GameField.human_attribute_name(:name)
+          .admin-field__value
+            = @game_field.name
+      .admin-fields__field
+        .admin-field
+          .admin-field__label
+            = GameField.human_attribute_name(:address)
+          .admin-field__value
+            = @game_field.address
+      .admin-fields__field
+        .admin-field
+          .admin-field__label
+            = GameField.human_attribute_name(:google_maps_url)
+          .admin-field__value
+            = @game_field.google_maps_url

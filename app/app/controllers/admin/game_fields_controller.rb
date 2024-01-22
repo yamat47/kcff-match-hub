@@ -6,7 +6,7 @@ module Admin
 
     def index
       @game_fields = GameField.universal_id_ordered
-                              # .search_by_keyword(index_params[:search])
+                              .search_by_keyword(index_params[:search])
                               .page(index_params[:page])
                               .per(INDEX_PER_PAGE)
     end

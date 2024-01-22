@@ -5,6 +5,6 @@ FactoryBot.define do
     universal_id { "gmf_#{SecureRandom.alphanumeric(8)}" }
     name { "#{Faker::Address.city}#{%w[グラウンド フィールド].sample}" }
     address { Faker::Address.full_address }
-    google_maps_url { Faker::Internet.url(host: 'maps.app.goo.gl') }
+    google_maps_url { Faker::Internet.url(host: 'maps.app.goo.gl', scheme: 'https') }
   end
 end

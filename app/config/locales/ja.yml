@@ -10,6 +10,11 @@ ja:
       administrator:
         universal_id: ID
         email: メールアドレス
+      game_field:
+        universal_id: ID
+        name: 会場名
+        address: 住所
+        google_maps_url: Google Map URL
 
   date:
     abbr_day_names:
@@ -203,6 +208,8 @@ ja:
         dashboard: ダッシュボード
         administrators:
           index: 管理者
+        game_fields:
+          index: 試合会場
       button:
         new: 追加する
         edit: 編集する
@@ -213,8 +220,7 @@ ja:
       confirm:
         destroy: 本当に削除しますか？
       supplement:
-        administrators:
-          universal_id_auto_generated: データを保存した際に自動で発行されます。
+        universal_id_auto_generated: データを保存した際に自動で発行されます。
       placeholder:
         search: キーワード検索
 

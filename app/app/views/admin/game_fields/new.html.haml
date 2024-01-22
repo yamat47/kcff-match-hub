@@ -1,0 +1,16 @@
+:ruby
+  add_breadcrumb t('view.admin.breadcrumbs.game_fields.index'), admin_game_fields_path
+  add_breadcrumb t('view.admin.breadcrumbs.actions.new')
+
+.admin-content
+  .admin-content__title
+    .admin-title
+      .admin-title__image
+        = image_tag 'icon-stadium.png', class: 'admin-title-image'
+      .admin-title__text
+        %h1.admin-title_text
+          （ID未設定）
+
+  .admin-content__fields
+    = render 'form', game_field: @game_field, url: admin_game_fields_path,
+                     cancel_path: admin_game_fields_path

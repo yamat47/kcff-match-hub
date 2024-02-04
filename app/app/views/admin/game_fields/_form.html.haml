@@ -27,6 +27,12 @@
           = GameField.human_attribute_name(:google_maps_url)
         .admin-field__value
           = form.url_field :google_maps_url, class: 'admin-form-text_field is-long', required: true
+    .admin-fields__field
+      .admin-field
+        .admin-field__label
+          = GameField.human_attribute_name(:google_maps_embed_src_url)
+        .admin-field__value
+          = form.url_field :google_maps_embed_src_url, class: 'admin-form-text_field is-long', required: true
     - if game_field.errors.any?
       .admin-fields__field
         .admin-form-errors

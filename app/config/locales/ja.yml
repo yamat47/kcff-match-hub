@@ -15,6 +15,7 @@ ja:
         name: 会場名
         address: 住所
         google_maps_url: Google Map URL
+        google_maps_embed_src_url: 埋め込み用URL
 
   date:
     abbr_day_names:

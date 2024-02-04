@@ -6,6 +6,7 @@
   .admin-field__label, .admin-field__value {
     display: flex;
     align-items: center;
+    height: min-content;
   }
 
   .admin-field__label {

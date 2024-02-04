@@ -7,6 +7,7 @@ class CreateGameFields < ActiveRecord::Migration[7.1]
       t.string :name, null: false, index: { unique: true }, comment: '会場名'
       t.string :address, null: false, comment: '住所'
       t.string :google_maps_url, null: false, comment: 'GoogleマップURL'
+      t.text :google_maps_embed_src_url, null: false, comment: 'Googleマップ埋め込みURL'
 
       t.timestamps
     end

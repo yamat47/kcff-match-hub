@@ -58,7 +58,7 @@ module Admin
     end
 
     def game_field_params
-      params.require(:game_field).permit(:name, :address, :google_maps_url)
+      params.require(:game_field).permit(:name, :address, :google_maps_url, :google_maps_embed_src_url)
     end
   end
 end

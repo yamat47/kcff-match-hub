@@ -8,6 +8,7 @@ class GameField < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :address, presence: true
   validates :google_maps_url, presence: true, url: { host: /\Amaps\.app\.goo\.gl\Z/ }
+  validates :google_maps_embed_src_url, presence: true, url: { host: /\Awww\.google\.com\Z/ }
 
   scope :search_by_keyword, lambda { |query|
     where(<<-SQL.squish, query: "%#{query}%")

@@ -28,6 +28,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_21_040807) do
     t.string "name", null: false, comment: "会場名"
     t.string "address", null: false, comment: "住所"
     t.string "google_maps_url", null: false, comment: "GoogleマップURL"
+    t.text "google_maps_embed_src_url", null: false, comment: "Googleマップ埋め込みURL"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_game_fields_on_name", unique: true

@@ -1,0 +1,28 @@
+.admin-field-value-link {
+  text-decoration: underline;
+
+  &[target="_blank"] {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      background-image: url("/icon-external-link.png");
+      background-size: contain;
+    }
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.admin-field-value-iframe {
+  width: 640px;
+  height: 360px;
+  border: none;
+}

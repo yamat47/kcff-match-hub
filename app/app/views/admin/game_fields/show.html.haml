@@ -45,4 +45,12 @@
           .admin-field__label
             = GameField.human_attribute_name(:google_maps_url)
           .admin-field__value
-            = @game_field.google_maps_url
+            = link_to @game_field.google_maps_url, @game_field.google_maps_url, class: 'admin-field-value-link',
+                                                                                target: '_blank',
+                                                                                rel: 'noopener noreferrer'
+      .admin-fields__field
+        .admin-field
+          %iframe.admin-field-value-iframe{ src: @game_field.google_maps_embed_src_url,
+                                            allowfullscreen: '',
+                                            loading: 'lazy',
+                                            referrerpolicy: 'no-referrer-when-downgrade' }

@@ -1,0 +1,17 @@
+:ruby
+  add_breadcrumb t('view.admin.breadcrumbs.tournaments.index'), admin_tournaments_path
+  add_breadcrumb @tournament.name, admin_tournament_path(@tournament)
+  add_breadcrumb t('view.admin.breadcrumbs.actions.edit')
+
+.admin-content
+  .admin-content__title
+    .admin-title
+      .admin-title__image
+        = image_tag 'icon-trophy.png', class: 'admin-title-image'
+      .admin-title__text
+        %h1.admin-title_text
+          = @tournament.name
+
+  .admin-content__fields
+    = render 'form', tournament: @tournament, url: admin_tournament_path(@tournament),
+                     cancel_path: admin_tournament_path(@tournament)

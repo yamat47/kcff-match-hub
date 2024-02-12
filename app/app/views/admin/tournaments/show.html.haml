@@ -1,0 +1,36 @@
+:ruby
+  add_breadcrumb t('view.admin.breadcrumbs.tournaments.index'), admin_tournaments_path
+  add_breadcrumb @tournament.name
+
+.admin-content
+  .admin-content__title
+    .admin-title
+      .admin-title__image
+        = image_tag 'icon-trophy.png', class: 'admin-title-image'
+      .admin-title__text
+        %h1.admin-title_text
+          = @tournament.name
+      .admin-title__actions
+        .admin-title-actions
+          .admin-title-actions__action
+            = link_to t('view.admin.button.edit'), edit_admin_tournament_path(@tournament),
+                      class: 'admin-title-action_button'
+          .admin-title-actions__action
+            = button_to t('view.admin.button.destroy'), admin_tournament_path(@tournament),
+                        method: :delete, data: data_for_confirm(confirm_message: t('view.admin.confirm.destroy')),
+                        class: 'admin-title-action_button'
+
+  .admin-content__fields
+    .admin-fields
+      .admin-fields__field
+        .admin-field
+          .admin-field__label
+            = Tournament.human_attribute_name(:universal_id)
+          .admin-field__value
+            = @tournament.universal_id
+      .admin-fields__field
+        .admin-field
+          .admin-field__label
+            = Tournament.human_attribute_name(:name)
+          .admin-field__value
+            = @tournament.name

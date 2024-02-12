@@ -16,6 +16,9 @@ ja:
         address: 住所
         google_maps_url: Google Map URL
         google_maps_embed_src_url: 埋め込み用URL
+      tournament:
+        universal_id: ID
+        name: 大会名
 
   date:
     abbr_day_names:
@@ -211,6 +214,8 @@ ja:
           index: 管理者
         game_fields:
           index: 試合会場
+        tournaments:
+          index: 大会
       button:
         new: 追加する
         edit: 編集する

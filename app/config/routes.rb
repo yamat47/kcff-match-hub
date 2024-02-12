@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resource :dashboards, only: [:show]
     resources :administrators
     resources :game_fields
+    resources :tournaments
   end
 
   namespace :auth do

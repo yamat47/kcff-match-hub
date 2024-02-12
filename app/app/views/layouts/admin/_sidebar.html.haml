@@ -1,3 +1,10 @@
+:ruby
+  menus = [
+    { icon: 'icon-stadium.png', label: '試合会場', path: admin_game_fields_path },
+    { icon: 'icon-trophy.png', label: '大会', path: admin_tournaments_path },
+    { icon: 'icon-administrator.png', label: '管理者', path: admin_administrators_path }
+  ]
+
 .sidebar
   .sidebar__logo
     .sidebar-logo
@@ -15,18 +22,13 @@
             = current_administrator.email
   .sidebar__navigations
     .sidebar-navigations
-      .sidebar-navigations__item
-        = link_to admin_game_fields_path, class: 'sidebar-navigations-item' do
-          .sidebar-navigations-item__icon
-            = image_tag 'icon-stadium.png'
-          .sidebar-navigations-item__label
-            試合会場
-      .sidebar-navigations__item
-        = link_to admin_administrators_path, class: 'sidebar-navigations-item' do
-          .sidebar-navigations-item__icon
-            = image_tag 'icon-administrator.png'
-          .sidebar-navigations-item__label
-            管理者
+      - menus.each do |item|
+        .sidebar-navigations__item
+          = link_to item[:path], class: 'sidebar-navigations-item' do
+            .sidebar-navigations-item__icon
+              = image_tag item[:icon]
+            .sidebar-navigations-item__label
+              = item[:label]
   .sidebar__logout
     .sidebar-logout
       = button_to 'ログアウト', admin_session_path, method: :delete, class: 'sidebar-logout-button'

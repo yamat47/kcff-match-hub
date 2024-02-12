@@ -36,10 +36,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_12_133108) do
   end
 
   create_table "tournaments", comment: "大会", force: :cascade do |t|
+    t.string "universal_id", null: false, comment: "ユニバーサルID"
     t.string "name", null: false, comment: "大会名"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_tournaments_on_name"
+    t.index ["universal_id"], name: "index_tournaments_on_universal_id", unique: true
   end
 
 end

@@ -19,6 +19,22 @@ services:
       - pgdata:/var/lib/postgresql/data
     env_file:
       - environments/development/.db-env
+  minio:
+    image: minio/minio
+    command: minio server /data --console-address ':9001'
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio:/data
+    env_file:
+      - environments/development/.minio-env
+    networks:
+      default:
+        aliases:
+          - minio.127.0.0.1.nip.io
+          - file.minio.127.0.0.1.nip.io
 
 volumes:
   pgdata:
+  minio:

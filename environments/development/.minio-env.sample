@@ -1,0 +1,3 @@
+MINIO_DOMAIN: minio.127.0.0.1.nip.io
+MINIO_ROOT_USER: minio
+MINIO_ROOT_PASSWORD: password

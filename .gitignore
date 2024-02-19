@@ -34,6 +34,7 @@
 
 .app-env
 .db-env
+.minio-env
 
 .DS_Store
 **/*/.DS_Store

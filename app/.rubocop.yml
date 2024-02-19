@@ -7,9 +7,17 @@ AllCops:
     - 'db/schema.rb'
     - 'vendor/**/*'
 
-Style/Documentation:
-  Enabled: false
+Metrics/AbcSize:
+  Exclude:
+    - 'db/migrate/20240217131001_create_active_storage_tables.active_storage.rb'
 
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*_spec.rb'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/20240217131001_create_active_storage_tables.active_storage.rb'
+
+Style/Documentation:
+  Enabled: false

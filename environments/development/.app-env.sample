@@ -10,3 +10,8 @@ GOOGLE_CLIENT_SECRET=
 
 # set `true` to use fake auth
 USE_FAKE_AUTH=
+
+FILE_AWS_S3_BUCKET: dev-kcff-activestorage
+FILE_AWS_S3_ENDPOINT: http://minio.127.0.0.1.nip.io:9000
+FILE_AWS_ACCESS_KEY_ID: minio
+FILE_AWS_SECRET_ACCESS_KEY: password

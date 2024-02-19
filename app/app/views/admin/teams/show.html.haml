@@ -1,0 +1,42 @@
+:ruby
+  add_breadcrumb t('view.admin.breadcrumbs.teams.index'), admin_teams_path
+  add_breadcrumb @team.name
+
+.admin-content
+  .admin-content__title
+    .admin-title
+      .admin-title__image
+        = image_tag 'icon-team.png', class: 'admin-title-image'
+      .admin-title__text
+        %h1.admin-title_text
+          = @team.name
+      .admin-title__actions
+        .admin-title-actions
+          .admin-title-actions__action
+            = link_to t('view.admin.button.edit'), edit_admin_team_path(@team),
+                      class: 'admin-title-action_button'
+          .admin-title-actions__action
+            = button_to t('view.admin.button.destroy'), admin_team_path(@team),
+                        method: :delete, data: data_for_confirm(confirm_message: t('view.admin.confirm.destroy')),
+                        class: 'admin-title-action_button'
+
+  .admin-content__fields
+    .admin-fields
+      .admin-fields__field
+        .admin-field
+          .admin-field__label
+            = Team.human_attribute_name(:universal_id)
+          .admin-field__value
+            = @team.universal_id
+      .admin-fields__field
+        .admin-field
+          .admin-field__label
+            = Team.human_attribute_name(:name)
+          .admin-field__value
+            = @team.name
+      .admin-fields__field
+        .admin-field
+          .admin-field__label
+            = Team.human_attribute_name(:logo)
+          .admin-field__value
+            = image_tag @team.logo.url, class: 'admin-field-value-image'

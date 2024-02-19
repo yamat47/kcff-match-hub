@@ -19,6 +19,10 @@ ja:
       tournament:
         universal_id: ID
         name: 大会名
+      team:
+        universal_id: ID
+        name: チーム名
+        logo: ロゴ画像
 
   date:
     abbr_day_names:
@@ -216,6 +220,8 @@ ja:
           index: 試合会場
         tournaments:
           index: 大会
+        teams:
+          index: チーム
       button:
         new: 追加する
         edit: 編集する

@@ -1,5 +1,5 @@
 .admin-field {
-  height: 2rem;
+  min-height: 2rem;
   display: flex;
   gap: 1rem;
 

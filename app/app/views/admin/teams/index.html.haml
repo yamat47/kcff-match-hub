@@ -1,0 +1,39 @@
+:ruby
+  add_breadcrumb t('view.admin.breadcrumbs.teams.index')
+
+.admin-list_container
+  .admin-list-container__header
+    .admin-list-navigation
+      .admin-list-navigation__search
+        = form_with url: admin_teams_path, method: :get, local: true do |form|
+          .admin-list-search
+            .admin-list-search__input
+              = form.text_field :search, value: params[:search], placeholder: t('view.admin.placeholder.search'),
+                                         class: 'admin-list-search-input'
+            .admin-list-search__submit
+              = form.submit t('view.admin.button.search'), name: '', class: 'admin-list-search-submit'
+      .admin-list-navigation__actions
+        .admin-list-navigation-actions
+          .admin-list-navigation-actions__action
+            = link_to t('view.admin.button.new'), new_admin_team_path,
+                      class: 'admin-list-navigation-action_button'
+  .admin-list_container__main
+    %table.admin-list
+      %thead.admin-list__header.admin-list-header
+        %tr.admin-list-row
+          %th.admin-list-cell.is-header
+            = Team.human_attribute_name :universal_id
+          %th.admin-list-cell.is-header
+            = Team.human_attribute_name :name
+      %tbody.admin-list__body.admin-list-body
+        - @teams.each do |team|
+          %tr.admin-list-row
+            %td.admin-list-cell
+              .admin-list-cell-with-icon
+                = image_tag 'icon-team.png', class: 'admin-list-cell-with-icon__icon'
+                .admin-list-cell-with-icon__text
+                  = link_to team.universal_id, admin_team_path(team)
+            %td.admin-list-cell
+              = link_to team.name, admin_team_path(team)
+  .admin-list_container__pagination
+    = paginate @teams, views_prefix: 'admin'

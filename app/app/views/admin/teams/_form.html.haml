@@ -22,7 +22,7 @@
         .admin-field__value
           .admin-form-file_field__wrapper
             = form.file_field :logo, class: 'admin-form-file_field__field'
-            = image_tag team.logo.url, class: 'admin-field-value-image'
+            = image_tag team.logo.url, class: 'admin-field-value-image' if team.logo.attached?
     - if team.errors.any?
       .admin-fields__field
         .admin-form-errors

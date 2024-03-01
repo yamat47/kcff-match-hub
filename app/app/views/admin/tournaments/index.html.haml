@@ -27,13 +27,13 @@
             = Tournament.human_attribute_name :name
       %tbody.admin-list__body.admin-list-body
         - @tournaments.each do |tournament|
-          %tr.admin-list-row
+          %tr.admin-list-row{ data: list_data_attributes(href: admin_tournament_path(tournament)) }
             %td.admin-list-cell
               .admin-list-cell-with-icon
                 = image_tag 'icon-trophy.png', class: 'admin-list-cell-with-icon__icon'
                 .admin-list-cell-with-icon__text
-                  = link_to tournament.universal_id, admin_tournament_path(tournament)
+                  = tournament.universal_id
             %td.admin-list-cell
-              = link_to tournament.name, admin_tournament_path(tournament)
+              = tournament.name
   .admin-list_container__pagination
     = paginate @tournaments, views_prefix: 'admin'

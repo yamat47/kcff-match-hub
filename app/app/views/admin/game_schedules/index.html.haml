@@ -35,12 +35,12 @@
             = GameSchedule.human_attribute_name :game_field
       %tbody.admin-list__body.admin-list-body
         - @game_schedules.each do |game_schedule|
-          %tr.admin-list-row
+          %tr.admin-list-row{ data: list_data_attributes(href: admin_game_schedule_path(game_schedule)) }
             %td.admin-list-cell
               .admin-list-cell-with-icon
                 = image_tag 'icon-calendar.png', class: 'admin-list-cell-with-icon__icon'
                 .admin-list-cell-with-icon__text
-                  = link_to game_schedule.universal_id, admin_game_schedule_path(game_schedule)
+                  = game_schedule.universal_id
             %td.admin-list-cell
               = l(game_schedule.start_at, format: :long)
             %td.admin-list-cell

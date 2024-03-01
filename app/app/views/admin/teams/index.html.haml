@@ -27,13 +27,13 @@
             = Team.human_attribute_name :name
       %tbody.admin-list__body.admin-list-body
         - @teams.each do |team|
-          %tr.admin-list-row
+          %tr.admin-list-row{ data: list_data_attributes(href: admin_team_path(team)) }
             %td.admin-list-cell
               .admin-list-cell-with-icon
                 = image_tag 'icon-team.png', class: 'admin-list-cell-with-icon__icon'
                 .admin-list-cell-with-icon__text
-                  = link_to team.universal_id, admin_team_path(team)
+                  = team.universal_id
             %td.admin-list-cell
-              = link_to team.name, admin_team_path(team)
+              = team.name
   .admin-list_container__pagination
     = paginate @teams, views_prefix: 'admin'

@@ -29,15 +29,15 @@
             = GameField.human_attribute_name :address
       %tbody.admin-list__body.admin-list-body
         - @game_fields.each do |game_field|
-          %tr.admin-list-row
+          %tr.admin-list-row{ data: list_data_attributes(href: admin_game_field_path(game_field)) }
             %td.admin-list-cell
               .admin-list-cell-with-icon
                 = image_tag 'icon-stadium.png', class: 'admin-list-cell-with-icon__icon'
                 .admin-list-cell-with-icon__text
-                  = link_to game_field.universal_id, admin_game_field_path(game_field)
+                  = game_field.universal_id
             %td.admin-list-cell
-              = link_to game_field.name, admin_game_field_path(game_field)
+              = game_field.name
             %td.admin-list-cell
-              = link_to game_field.address, admin_game_field_path(game_field)
+              = game_field.address
   .admin-list_container__pagination
     = paginate @game_fields, views_prefix: 'admin'

@@ -27,13 +27,13 @@
             = Administrator.human_attribute_name :email
       %tbody.admin-list__body.admin-list-body
         - @administrators.each do |administrator|
-          %tr.admin-list-row
+          %tr.admin-list-row{ data: list_data_attributes(href: admin_administrator_path(administrator)) }
             %td.admin-list-cell
               .admin-list-cell-with-icon
                 = image_tag 'icon-administrator.png', class: 'admin-list-cell-with-icon__icon'
                 .admin-list-cell-with-icon__text
-                  = link_to administrator.universal_id, admin_administrator_path(administrator)
+                  = administrator.universal_id
             %td.admin-list-cell
-              = link_to administrator.email, admin_administrator_path(administrator)
+              = administrator.email
   .admin-list_container__pagination
     = paginate @administrators, views_prefix: 'admin'

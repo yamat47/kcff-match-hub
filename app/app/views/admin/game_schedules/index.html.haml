@@ -1,0 +1,55 @@
+:ruby
+  add_breadcrumb t('view.admin.breadcrumbs.game_schedules.index')
+
+.admin-list_container
+  .admin-list-container__header
+    .admin-list-navigation
+      .admin-list-navigation__search
+        = form_with url: admin_game_schedules_path, method: :get, local: true do |form|
+          .admin-list-search
+            .admin-list-search__input
+              = form.text_field :search, value: params[:search], placeholder: t('view.admin.placeholder.search'),
+                                         class: 'admin-list-search-input'
+            .admin-list-search__submit
+              = form.submit t('view.admin.button.search'), name: '', class: 'admin-list-search-submit'
+      .admin-list-navigation__actions
+        .admin-list-navigation-actions
+          .admin-list-navigation-actions__action
+            = link_to t('view.admin.button.new'), new_admin_game_schedule_path,
+                      class: 'admin-list-navigation-action_button'
+  .admin-list_container__main
+    %table.admin-list
+      %thead.admin-list__header.admin-list-header
+        %tr.admin-list-row
+          %th.admin-list-cell.is-header
+            = GameSchedule.human_attribute_name :universal_id
+          %th.admin-list-cell.is-header
+            = GameSchedule.human_attribute_name :start_at
+          %th.admin-list-cell.is-header
+            = GameSchedule.human_attribute_name :home_team
+          %th.admin-list-cell.is-header
+            = GameSchedule.human_attribute_name :visitor_team
+          %th.admin-list-cell.is-header
+            = GameSchedule.human_attribute_name :tournament
+          %th.admin-list-cell.is-header
+            = GameSchedule.human_attribute_name :game_field
+      %tbody.admin-list__body.admin-list-body
+        - @game_schedules.each do |game_schedule|
+          %tr.admin-list-row
+            %td.admin-list-cell
+              .admin-list-cell-with-icon
+                = image_tag 'icon-calendar.png', class: 'admin-list-cell-with-icon__icon'
+                .admin-list-cell-with-icon__text
+                  = link_to game_schedule.universal_id, admin_game_schedule_path(game_schedule)
+            %td.admin-list-cell
+              = l(game_schedule.start_at, format: :long)
+            %td.admin-list-cell
+              = game_schedule.home_team_name
+            %td.admin-list-cell
+              = game_schedule.visitor_team_name
+            %td.admin-list-cell
+              = game_schedule.tournament_name
+            %td.admin-list-cell
+              = game_schedule.game_field_name
+  .admin-list_container__pagination
+    = paginate @game_schedules, views_prefix: 'admin'

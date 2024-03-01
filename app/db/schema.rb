@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_17_131001) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_21_140827) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -63,6 +63,22 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_17_131001) do
     t.index ["universal_id"], name: "index_game_fields_on_universal_id", unique: true
   end
 
+  create_table "game_schedules", comment: "試合スケジュール", force: :cascade do |t|
+    t.string "universal_id", null: false, comment: "ユニバーサルID"
+    t.bigint "home_team_id", null: false, comment: "ホームチームID"
+    t.bigint "visitor_team_id", null: false, comment: "ビジターチームID"
+    t.bigint "game_field_id", null: false, comment: "試合会場ID"
+    t.bigint "tournament_id", null: false, comment: "大会ID"
+    t.datetime "start_at", null: false, comment: "試合開始日時"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_field_id"], name: "index_game_schedules_on_game_field_id"
+    t.index ["home_team_id"], name: "index_game_schedules_on_home_team_id"
+    t.index ["tournament_id"], name: "index_game_schedules_on_tournament_id"
+    t.index ["universal_id"], name: "index_game_schedules_on_universal_id", unique: true
+    t.index ["visitor_team_id"], name: "index_game_schedules_on_visitor_team_id"
+  end
+
   create_table "teams", force: :cascade do |t|
     t.string "universal_id", null: false, comment: "ユニバーサルID"
     t.string "name", null: false, comment: "チーム名"
@@ -82,4 +98,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_17_131001) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "game_schedules", "game_fields"
+  add_foreign_key "game_schedules", "teams", column: "home_team_id"
+  add_foreign_key "game_schedules", "teams", column: "visitor_team_id"
+  add_foreign_key "game_schedules", "tournaments"
 end

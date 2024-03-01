@@ -3,6 +3,7 @@
   border-radius: var(--input-border-radius);
   padding: 0.125rem 0.5rem;
   width: 15rem;
+  height: 2.5rem;
 
   &.is-long {
     width: 30rem;
@@ -41,6 +42,22 @@
 
   &::file-selector-button:active {
     border: 2px solid var(--color-primary-500);
+  }
+}
+
+.admin-form-datetime_field {
+  border: 1px solid var(--default-border-color);
+  border-radius: var(--input-border-radius);
+  padding: 0.125rem 0.5rem;
+  width: 15rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+
+  &:not(:read-only) {
+    &:focus {
+      border: 2px solid var(--color-primary-500);
+    }
   }
 }
 

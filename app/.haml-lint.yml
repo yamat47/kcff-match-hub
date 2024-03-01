@@ -4,3 +4,4 @@ linters:
   RuboCop:
     ignored_cops:
       - Layout/SpaceInsideParens
+      - Style/RedundantConstantBase

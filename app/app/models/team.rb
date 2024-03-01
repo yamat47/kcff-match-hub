@@ -16,4 +16,6 @@ class Team < ApplicationRecord
       OR name LIKE :query
     SQL
   }
+
+  delegate :url, to: :logo, prefix: true
 end

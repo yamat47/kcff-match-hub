@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resources :game_fields
     resources :tournaments
     resources :teams
+    resources :game_schedules
   end
 
   namespace :auth do

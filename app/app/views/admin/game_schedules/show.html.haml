@@ -1,0 +1,64 @@
+:ruby
+  add_breadcrumb t('view.admin.breadcrumbs.game_schedules.index'), admin_game_schedules_path
+  add_breadcrumb @game_schedule.name
+
+.admin-content
+  .admin-content__title
+    .admin-title
+      .admin-title__image
+        = image_tag 'icon-calendar.png', class: 'admin-title-image'
+      .admin-title__text
+        %h1.admin-title_text
+          = @game_schedule.name
+      .admin-title__actions
+        .admin-title-actions
+          .admin-title-actions__action
+            = link_to t('view.admin.button.edit'), edit_admin_game_schedule_path(@game_schedule),
+                      class: 'admin-title-action_button'
+          .admin-title-actions__action
+            = button_to t('view.admin.button.destroy'), admin_game_schedule_path(@game_schedule),
+                        method: :delete, data: data_for_confirm(confirm_message: t('view.admin.confirm.destroy')),
+                        class: 'admin-title-action_button'
+
+  .admin-content__fields
+    .admin-fields
+      .admin-fields__field
+        .admin-field
+          .admin-field__label
+            = GameSchedule.human_attribute_name(:universal_id)
+          .admin-field__value
+            = @game_schedule.universal_id
+      .admin-fields__field
+        .admin-field
+          .admin-field__label
+            = GameSchedule.human_attribute_name(:start_at)
+          .admin-field__value
+            = l(@game_schedule.start_at, format: :long)
+      .admin-fields__field
+        .admin-field
+          .admin-field__label
+            = GameSchedule.human_attribute_name(:home_team)
+          .admin-field__value
+            = link_to @game_schedule.home_team_name, admin_team_path(@game_schedule.home_team),
+                      class: 'admin-field-value-link'
+      .admin-fields__field
+        .admin-field
+          .admin-field__label
+            = GameSchedule.human_attribute_name(:visitor_team)
+          .admin-field__value
+            = link_to @game_schedule.visitor_team_name, admin_team_path(@game_schedule.visitor_team),
+                      class: 'admin-field-value-link'
+      .admin-fields__field
+        .admin-field
+          .admin-field__label
+            = GameSchedule.human_attribute_name(:tournament)
+          .admin-field__value
+            = link_to @game_schedule.tournament_name, admin_tournament_path(@game_schedule.tournament),
+                      class: 'admin-field-value-link'
+      .admin-fields__field
+        .admin-field
+          .admin-field__label
+            = GameSchedule.human_attribute_name(:game_field)
+          .admin-field__value
+            = link_to @game_schedule.game_field_name, admin_game_field_path(@game_schedule.game_field),
+                      class: 'admin-field-value-link'

@@ -1,0 +1,105 @@
+.admin-form-select {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-form-select__list {
+  position: absolute;
+  top: 3.5rem;
+  z-index: 1;
+  background-color: var(--color-white);
+
+  input[type=checkbox]:not(:checked) ~ & {
+    display: none;
+  }
+}
+
+.admin-form-select-button {
+  min-width: 20rem;
+  border: 1px solid var(--default-border-color);
+  border-radius: var(--input-border-radius);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.admin-form-select-button__selected {
+  flex: 1;
+}
+
+.admin-form-select-button__icon {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.admin-form-select-button-icon {
+  &:after {
+    display: block;
+    content: '';
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url('/icon-down-arrow.png');
+    background-size: contain;
+  }
+}
+
+input[type=checkbox]:checked ~ .admin-form-select__button {
+  & .admin-form-select-button-icon {
+    &:after {
+      background-image: url('/icon-up-arrow.png');
+    }
+  }
+}
+
+.admin-form-select-list {
+  min-width: 20rem;
+  max-height: 16rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border-radius: var(--input-border-radius);
+  overflow-y: auto;
+}
+
+.admin-form-select-list-item {
+  height: 2.5rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  gap: 0.5rem;
+
+  &:hover {
+    background-color: var(--color-gray-900);
+
+    .admin-form-select-button & {
+      background-color: unset;
+    }
+  }
+
+  & * {
+    height: 100%;
+  }
+}
+
+.admin-form-select-list-item-radio {
+  display: none;
+}
+
+.admin-form-select-list-item-image {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.admin-form-select-list-item-label {
+  display: flex;
+  align-items: center;
+  color: var(--color-gray-300);
+}

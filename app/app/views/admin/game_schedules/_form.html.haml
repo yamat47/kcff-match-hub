@@ -1,0 +1,73 @@
+= form_with model: game_schedule, url:, local: true, builder: ::FormBuilder::AdminFormBuilder do |form|
+  .admin-fields
+    .admin-fields__field
+      .admin-field
+        .admin-field__label
+          = GameSchedule.human_attribute_name(:universal_id)
+        .admin-field__value
+          - if game_schedule.persisted?
+            = form.text_field :universal_id, class: 'admin-form-text_field', readonly: true
+          - else
+            = t('view.admin.supplement.universal_id_auto_generated')
+    .admin-fields__field
+      .admin-field
+        .admin-field__label
+          = GameSchedule.human_attribute_name(:start_at)
+        .admin-field__value
+          = form.datetime_local_field :start_at, class: 'admin-form-datetime_field', required: true
+    .admin-fields__field
+      .admin-field
+        .admin-field__label
+          = GameSchedule.human_attribute_name(:home_team)
+        .admin-field__value
+          = form.select_with_image(:home_team_id,
+                                   Team.all,
+                                   value_method: :id,
+                                   text_method: :name,
+                                   image_method: :logo_url,
+                                   blank_options: { image_src: asset_url('icon-team.png'), label: 'チームを選択してください' })
+
+    .admin-fields__field
+      .admin-field
+        .admin-field__label
+          = GameSchedule.human_attribute_name(:visitor_team)
+        .admin-field__value
+          = form.select_with_image(:visitor_team_id,
+                                   Team.all,
+                                   value_method: :id,
+                                   text_method: :name,
+                                   image_method: :logo_url,
+                                   blank_options: { image_src: asset_url('icon-team.png'), label: 'チームを選択してください' })
+    .admin-fields__field
+      .admin-field
+        .admin-field__label
+          = GameSchedule.human_attribute_name(:tournament)
+        .admin-field__value
+          = form.select_with_image(:tournament_id,
+                                   Tournament.all,
+                                   value_method: :id,
+                                   text_method: :name,
+                                   blank_options: { image_src: asset_url('icon-trophy.png'), label: '大会を選択してください' })
+    .admin-fields__field
+      .admin-field
+        .admin-field__label
+          = GameSchedule.human_attribute_name(:game_field)
+        .admin-field__value
+          = form.select_with_image(:game_field_id,
+                                   GameField.all,
+                                   value_method: :id,
+                                   text_method: :name,
+                                   blank_options: { image_src: asset_url('icon-stadium.png'), label: '試合会場を選択してください' })
+    - if game_schedule.errors.any?
+      .admin-fields__field
+        .admin-form-errors
+          %ul.admin-form-error-list
+            - game_schedule.errors.full_messages.each do |message|
+              %li.admin-form-error-list__item
+                = message
+    .admin-fields__field
+      .admin-form-action_buttons
+        .admin-form-action_buttons__action
+          = form.submit t('view.admin.button.save'), class: 'admin-form-action_button'
+        .admin-form-action_buttons__action
+          = link_to t('view.admin.button.cancel'), cancel_path, class: 'admin-form-action_button is-cancel'

@@ -6,6 +6,11 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+      models:
+        game_schedule:
+          attributes:
+            visitor_team:
+              duplicated: はホームチームと同じチームを選択できません
     attributes:
       administrator:
         universal_id: ID
@@ -23,6 +28,13 @@ ja:
         universal_id: ID
         name: チーム名
         logo: ロゴ画像
+      game_schedule:
+        universal_id: ID
+        home_team: ホームチーム
+        visitor_team: ビジターチーム
+        game_field: 会場
+        tournament: 大会
+        start_at: キックオフ日時
 
   date:
     abbr_day_names:
@@ -218,6 +230,8 @@ ja:
           index: 管理者
         game_fields:
           index: 試合会場
+        game_schedules:
+          index: 試合
         tournaments:
           index: 大会
         teams:

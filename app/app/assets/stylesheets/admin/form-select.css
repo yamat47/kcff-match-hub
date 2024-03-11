@@ -77,7 +77,7 @@ input[type=checkbox]:checked ~ .admin-form-select__button {
   gap: 0.5rem;
 
   &:hover {
-    background-color: var(--color-gray-900);
+    background-color: var(--color-gray-100);
 
     .admin-form-select-button & {
       background-color: unset;
@@ -101,5 +101,5 @@ input[type=checkbox]:checked ~ .admin-form-select__button {
 .admin-form-select-list-item-label {
   display: flex;
   align-items: center;
-  color: var(--color-gray-300);
+  color: var(--color-gray-700);
 }

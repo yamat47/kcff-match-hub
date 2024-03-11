@@ -1,12 +1,7 @@
 .admin-list-navigation {
-  background-color: var(--color-gray-900);
-  padding: 1rem;
   border-radius: var(--input-border-radius);
   display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 0.5rem;
-
-  .admin-list-navigation__search {
-    flex: 1;
-  }
 }

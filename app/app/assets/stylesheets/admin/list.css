@@ -16,7 +16,7 @@
 
   .admin-list-row {
     &:hover {
-      background-color: var(--color-gray-900);
+      background-color: var(--color-gray-100);
       cursor: pointer;
     }
   }
@@ -27,12 +27,12 @@
   height: 3rem;
   vertical-align: middle;
   font-size: 0.875rem;
-  color: var(--color-gray-300);
+  color: var(--color-gray-700);
 
   &.is-header {
     font-weight: bold;
     font-size: 1rem;
-    color: var(--color-gray-100);
+    color: var(--color-gray-900);
   }
 }
 
@@ -48,6 +48,6 @@
 
   .admin-list-cell-with-icon__text {
     font-size: 0.875rem;
-    color: var(--color-gray-300);
+    color: var(--color-gray-700);
   }
 }

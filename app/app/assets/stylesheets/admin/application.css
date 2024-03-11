@@ -1,12 +1,14 @@
 .application {
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
+  background-color: var(--color-gray-100);
 
   .application__sidebar {
     width: 16rem;
   }
 
   .application__main {
+    padding: 8px;
     flex: 1;
   }
 }
@@ -14,17 +16,17 @@
 .application-main {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-
-  .application-main__breadcrumbs, .application-main__content {
-    padding: 8px 12px;
-  }
+  height: 100%;
+  background-color: var(--color-white);
+  border-radius: 16px;
 
   .application-main__breadcrumbs {
+    padding: 12px 24px;
     border-bottom: 1px solid var(--default-border-color);
   }
 
   .application-main__content {
+    padding: 32px;
     flex: 1;
     overflow-y: auto;
   }

@@ -1,0 +1,30 @@
+.application-mobile-navigation {
+  display: none;
+
+  @media (max-width: 599px) {
+    display: flex;
+    box-shadow: 0px 3px 3px 0 rgba(0, 0, 0, 0.1)
+  }
+}
+
+.application-mobile-navigation-item {
+  width: 20vw;
+  height: 20vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+  background-color: var(--color-gray-100);
+  border: 1px solid var(--color-white);
+
+  .application-mobile-navigation-item__icon {
+    height: 32px;
+  }
+
+  .application-mobile-navigation-item__label {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: var(--color-gray-700);
+  }
+}

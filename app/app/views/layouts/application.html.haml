@@ -7,4 +7,8 @@
     = csp_meta_tag
     = stylesheet_link_tag 'application', 'data-turbo-track': 'reload'
   %body
-    = yield
+    .application
+      .application__header
+        = render 'layouts/header'
+      .application__main
+        = yield

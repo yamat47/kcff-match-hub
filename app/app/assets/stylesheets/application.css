@@ -1,1 +1,7 @@
 /* Application styles */
+@import url('common/reset.css');
+
+@import url('common/font.css');
+@import url('common/variables.css');
+
+@import url('application/application-header.css');

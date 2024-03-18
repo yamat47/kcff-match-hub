@@ -6,12 +6,12 @@
     = csrf_meta_tags
     = csp_meta_tag
     %link{ rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/yakuhanjp@4.0.1/dist/css/yakuhanjp.css' }
-    = stylesheet_link_tag 'application', 'data-turbo-track': 'reload'
+    = stylesheet_link_tag 'media', 'data-turbo-track': 'reload'
   %body
     .application
       .application__header
-        = render 'layouts/header'
+        = render 'layouts/media/header'
       .application__mobile-navigation
-        = render 'layouts/mobile_navigation'
+        = render 'layouts/media/mobile_navigation'
       .application__main
         = yield

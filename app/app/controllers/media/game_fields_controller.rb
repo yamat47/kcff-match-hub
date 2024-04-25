@@ -2,6 +2,8 @@
 
 module Media
   class GameFieldsController < ApplicationController
-    def index; end
+    def index
+      @game_fields = GameField.order_by_name
+    end
   end
 end

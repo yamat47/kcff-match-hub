@@ -1,8 +1,4 @@
-/* Reset CSS must be loaded first to ensure style consistency */
-@import url('common/reset.css');
-
-@import url('common/font.css');
-@import url('common/variables.css');
+@import url('common.css');
 
 @import url('admin/application.css');
 @import url('admin/breadcrumbs.css');

@@ -10,6 +10,8 @@ class GameField < ApplicationRecord
   validates :google_maps_url, presence: true, url: { host: /\Amaps\.app\.goo\.gl\Z/ }
   validates :google_maps_embed_src_url, presence: true, url: { host: /\Awww\.google\.com\Z/ }
 
+  scope :order_by_name, -> { order(name: :asc) }
+
   scope :search_by_keyword, lambda { |query|
     where(<<-SQL.squish, query: "%#{query}%")
       universal_id LIKE :query

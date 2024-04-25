@@ -40,25 +40,25 @@
             = GameSchedule.human_attribute_name(:home_team)
           .admin-field__value
             = link_to @game_schedule.home_team_name, admin_team_path(@game_schedule.home_team),
-                      class: 'admin-field-value-link'
+                      class: 'common-text-link'
       .admin-fields__field
         .admin-field
           .admin-field__label
             = GameSchedule.human_attribute_name(:visitor_team)
           .admin-field__value
             = link_to @game_schedule.visitor_team_name, admin_team_path(@game_schedule.visitor_team),
-                      class: 'admin-field-value-link'
+                      class: 'common-text-link'
       .admin-fields__field
         .admin-field
           .admin-field__label
             = GameSchedule.human_attribute_name(:tournament)
           .admin-field__value
             = link_to @game_schedule.tournament_name, admin_tournament_path(@game_schedule.tournament),
-                      class: 'admin-field-value-link'
+                      class: 'common-text-link'
       .admin-fields__field
         .admin-field
           .admin-field__label
             = GameSchedule.human_attribute_name(:game_field)
           .admin-field__value
             = link_to @game_schedule.game_field_name, admin_game_field_path(@game_schedule.game_field),
-                      class: 'admin-field-value-link'
+                      class: 'common-text-link'

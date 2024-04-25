@@ -249,6 +249,11 @@ ja:
         universal_id_auto_generated: データを保存した際に自動で発行されます。
       placeholder:
         search: キーワード検索
+    media:
+      breadcrumbs:
+        root: トップページ
+        game_fields:
+          index: 試合会場
 
   views:
     pagination:

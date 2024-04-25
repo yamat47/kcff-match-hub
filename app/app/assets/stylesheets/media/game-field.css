@@ -1,0 +1,82 @@
+.media-game-fields {
+  max-width: 65rem;
+  margin-inline: auto;
+  padding: 3.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.media-game-fields-title {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.media-game-fields-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.media-game-field {
+  display: flex;
+
+  & > * {
+    width: 50%;
+  }
+
+  @media (max-width: 599px) {
+    flex-direction: column-reverse;
+
+    & > * {
+      width: 100%;
+    }
+  }
+}
+
+.media-game-field-content {
+  padding: 1rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  @media (max-width: 599px) {
+    padding: 0 1rem;
+    gap: 0.5rem;
+  }
+}
+
+.media-game-field-content-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.media-game-field-map {
+  @media (max-width: 599px) {
+    padding: 1rem;
+  }
+}
+
+.media-game-field-content-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.media-game-field-content-details-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.media-game-field-content-details-item-label {
+  font-weight: bold;
+}
+
+.media-game-field-map-iframe {
+  width: 100%;
+  height: 20rem;
+  border: none;
+}

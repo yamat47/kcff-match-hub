@@ -1,0 +1,34 @@
+:ruby
+  add_breadcrumb t('view.media.breadcrumbs.root'), root_path
+  add_breadcrumb t('view.media.breadcrumbs.game_fields.index')
+
+.media-game-fields
+  .media-game-fields__title
+    %h1.media-game-fields-title
+      試合会場
+  .media-game-fields__content
+    %section.media-game-fields-content
+      - @game_fields.each do |game_field|
+        .media-game-fields__item
+          .media-game-field
+            .media-game-field__map
+              .media-game-field-map
+                %iframe.media-game-field-map-iframe{ src: game_field.google_maps_embed_src_url,
+                                                     allowfullscreen: '',
+                                                     loading: 'lazy',
+                                                     referrerpolicy: 'no-referrer-when-downgrade' }
+            .media-game-field__content
+              .media-game-field-content
+                .media-game-field-content__name
+                  %h2.media-game-field-content-name
+                    = game_field.name
+                .media-game-field-content__details
+                  .media-game-field-content-details
+                    .media-game-field-content-details__item
+                      .media-game-field-content-details-item
+                        .media-game-field-content-details-item__label
+                          .media-game-field-content-details-item-label
+                            住所
+                        .media-game-field-content-details-item__value
+                          = link_to game_field.address, game_field.google_maps_url,
+                                    class: 'common-text-link', target: '_blank', rel: 'noopener noreferrer'

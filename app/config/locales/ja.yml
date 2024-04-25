@@ -28,6 +28,11 @@ ja:
         universal_id: ID
         name: チーム名
         logo: ロゴ画像
+      team_profile:
+        team: チーム
+        x_url: XのURL
+        instagram_url: InstagramのURL
+        homepage_url: ホームページのURL
       game_schedule:
         universal_id: ID
         home_team: ホームチーム

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_21_140827) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_25_062818) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -79,6 +79,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_21_140827) do
     t.index ["visitor_team_id"], name: "index_game_schedules_on_visitor_team_id"
   end
 
+  create_table "team_profiles", comment: "チーム情報", force: :cascade do |t|
+    t.bigint "team_id", null: false
+    t.string "x_url"
+    t.string "instagram_url"
+    t.string "homepage_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_team_profiles_on_team_id", unique: true
+  end
+
   create_table "teams", force: :cascade do |t|
     t.string "universal_id", null: false, comment: "ユニバーサルID"
     t.string "name", null: false, comment: "チーム名"
@@ -102,4 +112,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_21_140827) do
   add_foreign_key "game_schedules", "teams", column: "home_team_id"
   add_foreign_key "game_schedules", "teams", column: "visitor_team_id"
   add_foreign_key "game_schedules", "tournaments"
+  add_foreign_key "team_profiles", "teams"
 end

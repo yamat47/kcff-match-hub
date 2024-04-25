@@ -1,0 +1,17 @@
+:ruby
+  add_breadcrumb t('view.admin.breadcrumbs.teams.index'), admin_teams_path
+  add_breadcrumb @team.name, admin_team_path(@team)
+  add_breadcrumb t('view.admin.breadcrumbs.teams.logos.edit')
+
+.admin-content
+  .admin-content__title
+    .admin-title
+      .admin-title__image
+        = image_tag 'icon-team.png', class: 'admin-title-image'
+      .admin-title__text
+        %h1.admin-title_text
+          = @team.name
+
+  .admin-content__fields
+    = render 'form', team: @team, url: admin_team_logo_path(team_id: @team.id),
+                     method: :put, cancel_path: admin_team_path(@team)

@@ -18,5 +18,22 @@
 .admin-content-section-title {
   padding: 1rem;
   background-color: var(--color-gray-100);
-  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+
+  & .admin-content-section-title__text {
+    font-weight: bold;
+  }
+}
+
+.admin-content-section-title-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.admin-content-section-title-action_button {
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
 }

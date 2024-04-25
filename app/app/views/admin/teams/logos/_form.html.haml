@@ -3,18 +3,11 @@
     .admin-fields__field
       .admin-field
         .admin-field__label
-          = Team.human_attribute_name(:universal_id)
+          = Team.human_attribute_name(:logo)
         .admin-field__value
-          - if team.persisted?
-            = form.text_field :universal_id, class: 'admin-form-text_field', readonly: true
-          - else
-            = t('view.admin.supplement.universal_id_auto_generated')
-    .admin-fields__field
-      .admin-field
-        .admin-field__label
-          = Team.human_attribute_name(:name)
-        .admin-field__value
-          = form.text_field :name, class: 'admin-form-text_field', required: true
+          .admin-form-file_field__wrapper
+            = form.file_field :logo, class: 'admin-form-file_field__field', accept: 'image/*'
+            = image_tag team.logo.url, class: 'admin-field-value-image' if team.logo.attached?
     - if team.errors.any?
       .admin-fields__field
         .admin-form-errors

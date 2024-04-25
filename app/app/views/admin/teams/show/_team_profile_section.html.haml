@@ -1,0 +1,38 @@
+%section.admin-content-section
+  .admin-content-section__title
+    %h2.admin-content-section-title
+      .admin-content-section-title__text
+        チームプロフィール
+      .admin-content-section-title__actions
+        .admin-content-section-title-actions
+          - if team.team_profile.present?
+            .admin-content-section-title-actions__action
+              = link_to t('view.admin.button.edit'), edit_admin_team_team_profile_path(team_id: team),
+                        class: 'admin-content-section-title-action_button'
+          - else
+            .admin-content-section-title-actions__action
+              = link_to t('view.admin.button.edit'), new_admin_team_team_profile_path(team_id: team),
+                        class: 'admin-content-section-title-action_button'
+  .admin-content-section__fields
+    %table.admin-content-section-fields
+      %tr.admin-content-section-field
+        %th.admin-content-section-field__label
+          .admin-content-section-field-label
+            = Team.human_attribute_name(:x_url)
+        %td.admin-content-section-field__value
+          .admin-content-section-field-value
+            = team.x_url.presence || t('view.admin.no_data')
+      %tr.admin-content-section-field
+        %th.admin-content-section-field__label
+          .admin-content-section-field-label
+            = Team.human_attribute_name(:instagram_url)
+        %td.admin-content-section-field__value
+          .admin-content-section-field-value
+            = team.instagram_url.presence || t('view.admin.no_data')
+      %tr.admin-content-section-field
+        %th.admin-content-section-field__label
+          .admin-content-section-field-label
+            = Team.human_attribute_name(:homepage_url)
+        %td.admin-content-section-field__value
+          .admin-content-section-field-value
+            = team.homepage_url.presence || t('view.admin.no_data')

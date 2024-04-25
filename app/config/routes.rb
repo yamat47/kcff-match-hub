@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     resources :tournaments
     resources :teams do
       resource :logo, module: :teams, only: %i[new create edit update destroy]
+      resource :team_profile, module: :teams, only: %i[new create edit update]
     end
     resources :game_schedules
   end

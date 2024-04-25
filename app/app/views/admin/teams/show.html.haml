@@ -39,37 +39,9 @@
                   = @team.name
 
       .admin-content-main__sections
-        .admin-content__sections
-          .admin-content-sections
-            .admin-content-sections__section
-              %section.admin-content-section
-                .admin-content-section__title
-                  %h2.admin-content-section-title
-                    .admin-content-section-title__text
-                      画像
-                    .admin-content-section-title__actions
-                      .admin-content-section-title-actions
-                        - if @team.logo.attached?
-                          .admin-content-section-title-actions__action
-                            = link_to t('view.admin.button.edit'), edit_admin_team_logo_path(team_id: @team),
-                                      class: 'admin-content-section-title-action_button'
-                          .admin-content-section-title-actions__action
-                            = button_to t('view.admin.button.destroy'), admin_team_logo_path(team_id: @team),
-                                        method: :delete, data: data_for_confirm(confirm_message: t('view.admin.confirm.destroy')),
-                                        class: 'admin-content-section-title-action_button'
-                        - else
-                          .admin-content-section-title-actions__action
-                            = link_to t('view.admin.button.edit'), new_admin_team_logo_path(team_id: @team),
-                                      class: 'admin-content-section-title-action_button'
-                .admin-content-section__fields
-                  %table.admin-content-section-fields
-                    %tr.admin-content-section-field
-                      %th.admin-content-section-field__label
-                        .admin-content-section-field-label
-                          = Team.human_attribute_name(:logo)
-                      %td.admin-content-section-field__value
-                        .admin-content-section-field-value
-                          - if @team.logo.attached?
-                            = image_tag @team.logo.url, class: 'admin-field-value-image'
-                          - else
-                            = t('view.admin.no_data')
+        .admin-content-sections
+          .admin-content-sections__section
+            = render 'admin/teams/show/logo_section', team: @team
+
+          .admin-content-sections__section
+            = render 'admin/teams/show/team_profile_section', team: @team

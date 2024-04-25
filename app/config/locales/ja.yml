@@ -28,6 +28,9 @@ ja:
         universal_id: ID
         name: チーム名
         logo: ロゴ画像
+        x_url: X（旧Twitter）のURL
+        instagram_url: InstagramのURL
+        homepage_url: ホームページのURL
       team_profile:
         team: チーム
         x_url: XのURL

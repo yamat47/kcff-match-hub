@@ -1,0 +1,33 @@
+= form_with model: team_profile, url:, local: true do |form|
+  .admin-fields
+    .admin-fields__field
+      .admin-field
+        .admin-field__label
+          = TeamProfile.human_attribute_name(:x_url)
+        .admin-field__value
+          = form.url_field :x_url, class: 'admin-form-text_field'
+    .admin-fields__field
+      .admin-field
+        .admin-field__label
+          = TeamProfile.human_attribute_name(:instagram_url)
+        .admin-field__value
+          = form.url_field :instagram_url, class: 'admin-form-text_field'
+    .admin-fields__field
+      .admin-field
+        .admin-field__label
+          = TeamProfile.human_attribute_name(:homepage_url)
+        .admin-field__value
+          = form.url_field :homepage_url, class: 'admin-form-text_field'
+    - if team_profile.errors.any?
+      .admin-fields__field
+        .admin-form-errors
+          %ul.admin-form-error-list
+            - team_profile.errors.full_messages.each do |message|
+              %li.admin-form-error-list__item
+                = message
+    .admin-fields__field
+      .admin-form-action_buttons
+        .admin-form-action_buttons__action
+          = form.submit t('view.admin.button.save'), class: 'admin-form-action_button'
+        .admin-form-action_buttons__action
+          = link_to t('view.admin.button.cancel'), cancel_path, class: 'admin-form-action_button is-cancel'

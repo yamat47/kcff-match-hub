@@ -1,4 +1,6 @@
 .media-game-fields-content {
+  max-width: 64rem;
+  margin-inline: auto;
   display: flex;
   flex-direction: column;
   gap: 2rem;

@@ -254,6 +254,8 @@ ja:
         root: トップページ
         game_fields:
           index: 試合会場
+        teams:
+          index: チーム
 
   views:
     pagination:

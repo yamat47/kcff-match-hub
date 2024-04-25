@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   with_options module: :media do
     resource :homes, only: [:show]
     resources :game_fields, only: :index
+    resources :teams, only: :index
   end
 
   namespace :admin do

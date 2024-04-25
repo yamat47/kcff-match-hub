@@ -1,0 +1,38 @@
+:ruby
+  add_breadcrumb t('view.media.breadcrumbs.root'), root_path
+  add_breadcrumb t('view.media.breadcrumbs.teams.index')
+
+.media-list
+  .media-list__title
+    %h1.media-list-title
+      チーム
+  .media-list__content
+    %ul.media-team-list
+      - @teams.each do |team|
+        %li.media-team-list__item
+          .media-team-list-item
+            .media-team-list-item__logo
+              .media-team-list-item-logo
+                = image_tag team.logo_url, class: 'media-team-list-item-logo-image'
+            .media-team-list-item__content
+              .media-team-list-item-content
+                .media-team-list-item-content__name
+                  .media-team-list-item-name
+                    = team.name
+                .media-team-list-item-content__links
+                  .media-team-list-item-content-links
+                    - if team.x_url.present?
+                      .media-team-list-item-content-links__item
+                        = link_to 'X（旧Twitter）', team.x_url,
+                                  class: 'media-team-list-item-content-link', target: '_blank',
+                                  rel: 'noopener noreferrer'
+                    - if team.instagram_url.present?
+                      .media-team-list-item-content-links__item
+                        = link_to 'Instagram', team.instagram_url,
+                                  class: 'media-team-list-item-content-link', target: '_blank',
+                                  rel: 'noopener noreferrer'
+                    - if team.homepage_url.present?
+                      .media-team-list-item-content-links__item
+                        = link_to 'ホームページ', team.homepage_url,
+                                  class: 'media-team-list-item-content-link', target: '_blank',
+                                  rel: 'noopener noreferrer'

@@ -1,0 +1,13 @@
+.media-list {
+  padding: 3.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.media-list-title {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+}

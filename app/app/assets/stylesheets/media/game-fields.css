@@ -1,20 +1,6 @@
-.media-game-fields {
-  max-width: 65rem;
-  margin-inline: auto;
-  padding: 3.5rem 0;
-  display: flex;
-  flex-direction: column;
-  gap: 3.5rem;
-}
-
-.media-game-fields-title {
-  display: flex;
-  justify-content: center;
-  font-size: 2rem;
-  font-weight: bold;
-}
-
 .media-game-fields-content {
+  max-width: 64rem;
+  margin-inline: auto;
   display: flex;
   flex-direction: column;
   gap: 2rem;

@@ -1,0 +1,22 @@
+.admin-content-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.admin-content-section {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+  & .admin-content-section__fields {
+    padding: 1rem;
+  }
+}
+
+.admin-content-section-title {
+  padding: 1rem;
+  background-color: var(--color-gray-100);
+  font-weight: bold;
+}

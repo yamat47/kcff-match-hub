@@ -20,23 +20,38 @@
                         method: :delete, data: data_for_confirm(confirm_message: t('view.admin.confirm.destroy')),
                         class: 'admin-title-action_button'
 
-  .admin-content__fields
-    .admin-fields
-      .admin-fields__field
-        .admin-field
-          .admin-field__label
-            = Team.human_attribute_name(:universal_id)
-          .admin-field__value
-            = @team.universal_id
-      .admin-fields__field
-        .admin-field
-          .admin-field__label
-            = Team.human_attribute_name(:name)
-          .admin-field__value
-            = @team.name
-      .admin-fields__field
-        .admin-field
-          .admin-field__label
-            = Team.human_attribute_name(:logo)
-          .admin-field__value
-            = image_tag @team.logo.url, class: 'admin-field-value-image'
+  .admin-content__main
+    .admin-content-main
+      .admin-content-main__fields
+        .admin-content__fields
+          .admin-fields
+            .admin-fields__field
+              .admin-field
+                .admin-field__label
+                  = Team.human_attribute_name(:universal_id)
+                .admin-field__value
+                  = @team.universal_id
+            .admin-fields__field
+              .admin-field
+                .admin-field__label
+                  = Team.human_attribute_name(:name)
+                .admin-field__value
+                  = @team.name
+
+      .admin-content-main__sections
+        .admin-content__sections
+          .admin-content-sections
+            .admin-content-sections__section
+              %section.admin-content-section
+                .admin-content-section__title
+                  %h2.admin-content-section-title
+                    画像
+                .admin-content-section__fields
+                  %table.admin-content-section-fields
+                    %tr.admin-content-section-field
+                      %th.admin-content-section-field__label
+                        .admin-content-section-field-label
+                          = Team.human_attribute_name(:logo)
+                      %td.admin-content-section-field__value
+                        .admin-content-section-field-value
+                          = image_tag @team.logo.url, class: 'admin-field-value-image'

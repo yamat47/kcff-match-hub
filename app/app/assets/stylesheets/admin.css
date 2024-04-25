@@ -3,6 +3,8 @@
 @import url('admin/application.css');
 @import url('admin/breadcrumbs.css');
 @import url('admin/content.css');
+@import url('admin/content-section.css');
+@import url('admin/content-section-fields.css');
 @import url('admin/field.css');
 @import url('admin/field-value.css');
 @import url('admin/fields.css');

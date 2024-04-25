@@ -2,11 +2,11 @@
   add_breadcrumb t('view.media.breadcrumbs.root'), root_path
   add_breadcrumb t('view.media.breadcrumbs.game_fields.index')
 
-.media-game-fields
-  .media-game-fields__title
-    %h1.media-game-fields-title
+.media-list
+  .media-list__title
+    %h1.media-list-title
       試合会場
-  .media-game-fields__content
+  .media-list__content
     %section.media-game-fields-content
       - @game_fields.each do |game_field|
         .media-game-fields__item

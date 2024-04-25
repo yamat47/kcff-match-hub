@@ -10,6 +10,8 @@ class Team < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   # rubocop:enable Rails/UniqueValidationWithoutIndex
 
+  scope :order_by_name, -> { order(:name) }
+
   scope :search_by_keyword, lambda { |query|
     where(<<-SQL.squish, query: "%#{query}%")
       universal_id LIKE :query

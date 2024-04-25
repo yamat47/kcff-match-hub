@@ -6,6 +6,8 @@ class Team < ApplicationRecord
   setup_universal_id('tem')
   has_one_attached(:logo)
 
+  has_one :team_profile, dependent: :destroy
+
   # rubocop:disable Rails/UniqueValidationWithoutIndex
   validates :name, presence: true, uniqueness: true
   # rubocop:enable Rails/UniqueValidationWithoutIndex
@@ -20,19 +22,5 @@ class Team < ApplicationRecord
   }
 
   delegate :url, to: :logo, prefix: true
-
-  # FIXME: Returns a random URL to be displayed temporarily, as there is currently no means of persistence.
-  def x_url
-    [true, false].sample ? 'https://example.com' : nil
-  end
-
-  # FIXME: Returns a random URL to be displayed temporarily, as there is currently no means of persistence.
-  def instagram_url
-    [true, false].sample ? 'https://example.com' : nil
-  end
-
-  # FIXME: Returns a random URL to be displayed temporarily, as there is currently no means of persistence.
-  def homepage_url
-    [true, false].sample ? 'https://example.com' : nil
-  end
+  delegate :x_url, :instagram_url, :homepage_url, to: :team_profile, allow_nil: true
 end

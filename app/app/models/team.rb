@@ -23,4 +23,8 @@ class Team < ApplicationRecord
 
   delegate :url, to: :logo, prefix: true
   delegate :x_url, :instagram_url, :homepage_url, to: :team_profile, allow_nil: true
+
+  def any_link?
+    x_url.present? || instagram_url.present? || homepage_url.present?
+  end
 end

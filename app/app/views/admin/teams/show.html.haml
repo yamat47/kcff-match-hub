@@ -20,23 +20,28 @@
                         method: :delete, data: data_for_confirm(confirm_message: t('view.admin.confirm.destroy')),
                         class: 'admin-title-action_button'
 
-  .admin-content__fields
-    .admin-fields
-      .admin-fields__field
-        .admin-field
-          .admin-field__label
-            = Team.human_attribute_name(:universal_id)
-          .admin-field__value
-            = @team.universal_id
-      .admin-fields__field
-        .admin-field
-          .admin-field__label
-            = Team.human_attribute_name(:name)
-          .admin-field__value
-            = @team.name
-      .admin-fields__field
-        .admin-field
-          .admin-field__label
-            = Team.human_attribute_name(:logo)
-          .admin-field__value
-            = image_tag @team.logo.url, class: 'admin-field-value-image'
+  .admin-content__main
+    .admin-content-main
+      .admin-content-main__fields
+        .admin-content__fields
+          .admin-fields
+            .admin-fields__field
+              .admin-field
+                .admin-field__label
+                  = Team.human_attribute_name(:universal_id)
+                .admin-field__value
+                  = @team.universal_id
+            .admin-fields__field
+              .admin-field
+                .admin-field__label
+                  = Team.human_attribute_name(:name)
+                .admin-field__value
+                  = @team.name
+
+      .admin-content-main__sections
+        .admin-content-sections
+          .admin-content-sections__section
+            = render 'admin/teams/show/logo_section', team: @team
+
+          .admin-content-sections__section
+            = render 'admin/teams/show/team_profile_section', team: @team

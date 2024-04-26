@@ -28,6 +28,14 @@ ja:
         universal_id: ID
         name: チーム名
         logo: ロゴ画像
+        x_url: X（旧Twitter）のURL
+        instagram_url: InstagramのURL
+        homepage_url: ホームページのURL
+      team_profile:
+        team: チーム
+        x_url: XのURL
+        instagram_url: InstagramのURL
+        homepage_url: ホームページのURL
       game_schedule:
         universal_id: ID
         home_team: ホームチーム
@@ -236,6 +244,8 @@ ja:
           index: 大会
         teams:
           index: チーム
+          logos:
+            edit: ロゴ画像編集
       button:
         new: 追加する
         edit: 編集する
@@ -249,6 +259,7 @@ ja:
         universal_id_auto_generated: データを保存した際に自動で発行されます。
       placeholder:
         search: キーワード検索
+      no_data: 未設定
     media:
       breadcrumbs:
         root: トップページ

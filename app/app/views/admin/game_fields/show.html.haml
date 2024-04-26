@@ -20,37 +20,40 @@
                         method: :delete, data: data_for_confirm(confirm_message: t('view.admin.confirm.destroy')),
                         class: 'admin-title-action_button'
 
-  .admin-content__fields
-    .admin-fields
-      .admin-fields__field
-        .admin-field
-          .admin-field__label
-            = GameField.human_attribute_name(:universal_id)
-          .admin-field__value
-            = @game_field.universal_id
-      .admin-fields__field
-        .admin-field
-          .admin-field__label
-            = GameField.human_attribute_name(:name)
-          .admin-field__value
-            = @game_field.name
-      .admin-fields__field
-        .admin-field
-          .admin-field__label
-            = GameField.human_attribute_name(:address)
-          .admin-field__value
-            = @game_field.address
-      .admin-fields__field
-        .admin-field
-          .admin-field__label
-            = GameField.human_attribute_name(:google_maps_url)
-          .admin-field__value
-            = link_to @game_field.google_maps_url, @game_field.google_maps_url, class: 'common-text-link',
-                                                                                target: '_blank',
-                                                                                rel: 'noopener noreferrer'
-      .admin-fields__field
-        .admin-field
-          %iframe.admin-field-value-iframe{ src: @game_field.google_maps_embed_src_url,
-                                            allowfullscreen: '',
-                                            loading: 'lazy',
-                                            referrerpolicy: 'no-referrer-when-downgrade' }
+  .admin-content__main
+    .admin-content-main
+      .admin-content-main__fields
+        .admin-content__fields
+          .admin-fields
+            .admin-fields__field
+              .admin-field
+                .admin-field__label
+                  = GameField.human_attribute_name(:universal_id)
+                .admin-field__value
+                  = @game_field.universal_id
+            .admin-fields__field
+              .admin-field
+                .admin-field__label
+                  = GameField.human_attribute_name(:name)
+                .admin-field__value
+                  = @game_field.name
+            .admin-fields__field
+              .admin-field
+                .admin-field__label
+                  = GameField.human_attribute_name(:address)
+                .admin-field__value
+                  = @game_field.address
+            .admin-fields__field
+              .admin-field
+                .admin-field__label
+                  = GameField.human_attribute_name(:google_maps_url)
+                .admin-field__value
+                  = link_to @game_field.google_maps_url, @game_field.google_maps_url, class: 'common-text-link',
+                                                                                      target: '_blank',
+                                                                                      rel: 'noopener noreferrer'
+            .admin-fields__field
+              .admin-field
+                %iframe.admin-field-value-iframe{ src: @game_field.google_maps_embed_src_url,
+                                                  allowfullscreen: '',
+                                                  loading: 'lazy',
+                                                  referrerpolicy: 'no-referrer-when-downgrade' }

@@ -20,17 +20,20 @@
                         method: :delete, data: data_for_confirm(confirm_message: t('view.admin.confirm.destroy')),
                         class: 'admin-title-action_button'
 
-  .admin-content__fields
-    .admin-fields
-      .admin-fields__field
-        .admin-field
-          .admin-field__label
-            = Administrator.human_attribute_name(:universal_id)
-          .admin-field__value
-            = @administrator.universal_id
-      .admin-fields__field
-        .admin-field
-          .admin-field__label
-            = Administrator.human_attribute_name(:email)
-          .admin-field__value
-            = @administrator.email
+  .admin-content__main
+    .admin-content-main
+      .admin-content-main__fields
+        .admin-content__fields
+          .admin-fields
+            .admin-fields__field
+              .admin-field
+                .admin-field__label
+                  = Administrator.human_attribute_name(:universal_id)
+                .admin-field__value
+                  = @administrator.universal_id
+            .admin-fields__field
+              .admin-field
+                .admin-field__label
+                  = Administrator.human_attribute_name(:email)
+                .admin-field__value
+                  = @administrator.email

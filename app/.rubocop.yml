@@ -1,5 +1,8 @@
 require:
   - rubocop-rails
+  - rubocop-factory_bot
+  - rubocop-rspec
+  - rubocop-rspec_rails
 
 AllCops:
   NewCops: enable
@@ -31,6 +34,9 @@ Metrics/ParameterLists:
 Rails/NotNullColumn:
   Exclude:
     - db/migrate/20240505034131_add_season_id_to_game_schedules.rb
+
+RSpec/MultipleExpectations:
+  Enabled: false
 
 Style/Documentation:
   Enabled: false

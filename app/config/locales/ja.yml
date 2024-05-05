@@ -38,11 +38,16 @@ ja:
         homepage_url: ホームページのURL
       game_schedule:
         universal_id: ID
+        season: シーズン
         home_team: ホームチーム
         visitor_team: ビジターチーム
         game_field: 会場
         tournament: 大会
         start_at: キックオフ日時
+      season:
+        universal_id: ID
+        full_name: シーズン名
+        short_name: シーズン略称
 
   date:
     abbr_day_names:
@@ -246,6 +251,8 @@ ja:
           index: チーム
           logos:
             edit: ロゴ画像編集
+        seasons:
+          index: シーズン
       button:
         new: 追加する
         edit: 編集する

@@ -1,0 +1,45 @@
+:ruby
+  add_breadcrumb t('view.admin.breadcrumbs.seasons.index'), admin_seasons_path
+  add_breadcrumb @season.universal_id
+
+.admin-content
+  .admin-content__title
+    .admin-title
+      .admin-title__image
+        = image_tag 'icon-rotate.png', class: 'admin-title-image'
+      .admin-title__text
+        %h1.admin-title_text
+          = @season.universal_id
+      .admin-title__actions
+        .admin-title-actions
+          .admin-title-actions__action
+            = link_to t('view.admin.button.edit'), edit_admin_season_path(@season),
+                      class: 'admin-title-action_button'
+          .admin-title-actions__action
+            = button_to t('view.admin.button.destroy'), admin_season_path(@season),
+                        method: :delete, data: data_for_confirm(confirm_message: t('view.admin.confirm.destroy')),
+                        class: 'admin-title-action_button'
+
+  .admin-content__main
+    .admin-content-main
+      .admin-content-main__fields
+        .admin-content__fields
+          .admin-fields
+            .admin-fields__field
+              .admin-field
+                .admin-field__label
+                  = Season.human_attribute_name(:universal_id)
+                .admin-field__value
+                  = @season.universal_id
+            .admin-fields__field
+              .admin-field
+                .admin-field__label
+                  = Season.human_attribute_name(:full_name)
+                .admin-field__value
+                  = @season.full_name
+            .admin-fields__field
+              .admin-field
+                .admin-field__label
+                  = Season.human_attribute_name(:short_name)
+                .admin-field__value
+                  = @season.short_name

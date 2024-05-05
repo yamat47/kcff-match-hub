@@ -25,6 +25,7 @@ Rails.application.routes.draw do
       resource :logo, module: :teams, only: %i[new create edit update destroy]
       resource :team_profile, module: :teams, only: %i[new create edit update]
     end
+    resources :seasons
     resources :game_schedules
   end
 

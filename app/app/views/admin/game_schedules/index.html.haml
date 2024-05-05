@@ -24,6 +24,8 @@
           %th.admin-list-cell.is-header
             = GameSchedule.human_attribute_name :universal_id
           %th.admin-list-cell.is-header
+            = GameSchedule.human_attribute_name :season
+          %th.admin-list-cell.is-header
             = GameSchedule.human_attribute_name :start_at
           %th.admin-list-cell.is-header
             = GameSchedule.human_attribute_name :home_team
@@ -41,6 +43,8 @@
                 = image_tag 'icon-calendar.png', class: 'admin-list-cell-with-icon__icon'
                 .admin-list-cell-with-icon__text
                   = game_schedule.universal_id
+            %td.admin-list-cell
+              = game_schedule.season_name
             %td.admin-list-cell
               = l(game_schedule.start_at, format: :long)
             %td.admin-list-cell

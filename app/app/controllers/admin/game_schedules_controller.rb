@@ -59,7 +59,7 @@ module Admin
 
     def game_schedule_params
       params.require(:game_schedule)
-            .permit(:home_team_id, :visitor_team_id, :game_field_id, :tournament_id, :start_at)
+            .permit(:season_id, :home_team_id, :visitor_team_id, :game_field_id, :tournament_id, :start_at)
     end
   end
 end

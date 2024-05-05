@@ -1,0 +1,36 @@
+= form_with model: season, url:, local: true do |form|
+  .admin-fields
+    .admin-fields__field
+      .admin-field
+        .admin-field__label
+          = Season.human_attribute_name(:universal_id)
+        .admin-field__value
+          - if season.persisted?
+            = form.text_field :universal_id, class: 'admin-form-text_field', readonly: true
+          - else
+            = t('view.admin.supplement.universal_id_auto_generated')
+    .admin-fields__field
+      .admin-field
+        .admin-field__label
+          = Season.human_attribute_name(:full_name)
+        .admin-field__value
+          = form.text_field :full_name, class: 'admin-form-text_field is-long', required: true
+    .admin-fields__field
+      .admin-field
+        .admin-field__label
+          = Season.human_attribute_name(:short_name)
+        .admin-field__value
+          = form.text_field :short_name, class: 'admin-form-text_field is-long', required: true
+    - if season.errors.any?
+      .admin-fields__field
+        .admin-form-errors
+          %ul.admin-form-error-list
+            - season.errors.full_messages.each do |message|
+              %li.admin-form-error-list__item
+                = message
+    .admin-fields__field
+      .admin-form-action_buttons
+        .admin-form-action_buttons__action
+          = form.submit t('view.admin.button.save'), class: 'admin-form-action_button'
+        .admin-form-action_buttons__action
+          = link_to t('view.admin.button.cancel'), cancel_path, class: 'admin-form-action_button is-cancel'

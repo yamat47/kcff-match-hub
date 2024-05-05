@@ -2,6 +2,7 @@
 
 FactoryBot.define do
   factory :game_schedule do
+    season
     home_team { create(:team) }
     visitor_team { create(:team) }
     game_field

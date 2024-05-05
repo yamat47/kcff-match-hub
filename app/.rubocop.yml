@@ -27,5 +27,10 @@ Metrics/ParameterLists:
   Exclude:
     - 'app/helpers/form_builder/admin_form_builder.rb'
 
+
+Rails/NotNullColumn:
+  Exclude:
+    - db/migrate/20240505034131_add_season_id_to_game_schedules.rb
+
 Style/Documentation:
   Enabled: false

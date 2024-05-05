@@ -5,6 +5,7 @@ class GameSchedule < ApplicationRecord
 
   setup_universal_id('gms')
 
+  belongs_to :season
   belongs_to :home_team, class_name: 'Team'
   belongs_to :visitor_team, class_name: 'Team'
   belongs_to :game_field

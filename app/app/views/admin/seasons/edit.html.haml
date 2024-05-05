@@ -1,0 +1,17 @@
+:ruby
+  add_breadcrumb t('view.admin.breadcrumbs.seasons.index'), admin_seasons_path
+  add_breadcrumb @season.universal_id, admin_season_path(@season)
+  add_breadcrumb t('view.admin.breadcrumbs.actions.edit')
+
+.admin-content
+  .admin-content__title
+    .admin-title
+      .admin-title__image
+        = image_tag 'icon-rotate.png', class: 'admin-title-image'
+      .admin-title__text
+        %h1.admin-title_text
+          = @season.universal_id
+
+  .admin-content__fields
+    = render 'form', season: @season, url: admin_season_path(@season),
+                     cancel_path: admin_season_path(@season)

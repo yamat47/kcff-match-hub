@@ -36,6 +36,10 @@ class GameSchedule < ApplicationRecord
     "#{home_team_name} vs. #{visitor_team_name}"
   end
 
+  def season_name
+    season&.full_name
+  end
+
   private
 
   def home_team_and_visitor_team_must_be_different

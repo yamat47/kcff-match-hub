@@ -38,6 +38,7 @@ ja:
         homepage_url: ホームページのURL
       game_schedule:
         universal_id: ID
+        season: シーズン
         home_team: ホームチーム
         visitor_team: ビジターチーム
         game_field: 会場

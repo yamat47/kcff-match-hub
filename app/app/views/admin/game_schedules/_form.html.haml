@@ -18,6 +18,16 @@
     .admin-fields__field
       .admin-field
         .admin-field__label
+          = GameSchedule.human_attribute_name(:season)
+        .admin-field__value
+          = form.select_with_image(:season_id,
+                                   Season.all,
+                                   value_method: :id,
+                                   text_method: :full_name,
+                                   blank_options: { image_src: asset_url('icon-rotate.png'), label: 'シーズンを選択してください' })
+    .admin-fields__field
+      .admin-field
+        .admin-field__label
           = GameSchedule.human_attribute_name(:home_team)
         .admin-field__value
           = form.select_with_image(:home_team_id,

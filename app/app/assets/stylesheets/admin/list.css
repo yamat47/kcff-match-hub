@@ -25,6 +25,7 @@
 .admin-list-cell {
   display: table-cell;
   height: 3rem;
+  padding: 0.5rem;
   vertical-align: middle;
   font-size: 0.875rem;
   color: var(--color-gray-700);
@@ -33,6 +34,7 @@
     font-weight: bold;
     font-size: 1rem;
     color: var(--color-gray-900);
+    white-space: nowrap;
   }
 }
 

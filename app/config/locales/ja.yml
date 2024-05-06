@@ -44,6 +44,7 @@ ja:
         game_field: 会場
         tournament: 大会
         start_at: キックオフ日時
+        teams: 対戦チーム
       season:
         universal_id: ID
         full_name: シーズン名

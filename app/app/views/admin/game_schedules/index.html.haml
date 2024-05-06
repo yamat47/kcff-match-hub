@@ -26,13 +26,11 @@
           %th.admin-list-cell.is-header
             = GameSchedule.human_attribute_name :season
           %th.admin-list-cell.is-header
+            = GameSchedule.human_attribute_name :tournament
+          %th.admin-list-cell.is-header
             = GameSchedule.human_attribute_name :start_at
           %th.admin-list-cell.is-header
-            = GameSchedule.human_attribute_name :home_team
-          %th.admin-list-cell.is-header
-            = GameSchedule.human_attribute_name :visitor_team
-          %th.admin-list-cell.is-header
-            = GameSchedule.human_attribute_name :tournament
+            = GameSchedule.human_attribute_name :teams
           %th.admin-list-cell.is-header
             = GameSchedule.human_attribute_name :game_field
       %tbody.admin-list__body.admin-list-body
@@ -46,13 +44,15 @@
             %td.admin-list-cell
               = game_schedule.season_name
             %td.admin-list-cell
+              = game_schedule.tournament_name
+            %td.admin-list-cell
               = l(game_schedule.start_at, format: :long)
             %td.admin-list-cell
+              Home:
               = game_schedule.home_team_name
-            %td.admin-list-cell
+              %br
+              Visitor:
               = game_schedule.visitor_team_name
-            %td.admin-list-cell
-              = game_schedule.tournament_name
             %td.admin-list-cell
               = game_schedule.game_field_name
   .admin-list_container__pagination

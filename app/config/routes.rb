@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resource :homes, only: [:show]
     resources :game_fields, only: :index
     resources :teams, only: :index
+    resources :game_schedules, only: :index
   end
 
   namespace :admin do

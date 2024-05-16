@@ -273,6 +273,8 @@ ja:
         root: トップページ
         game_fields:
           index: 試合会場
+        game_schedules:
+          index: 日程・結果
         teams:
           index: 所属チーム
 

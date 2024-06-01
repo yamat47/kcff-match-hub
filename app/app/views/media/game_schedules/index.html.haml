@@ -1,0 +1,41 @@
+:ruby
+  add_breadcrumb t('view.media.breadcrumbs.root'), root_path
+  add_breadcrumb t('view.media.breadcrumbs.game_schedules.index')
+
+.media-list
+  .media-list__title
+    %h1.media-list-title
+      試合日程・結果
+  .media-list__content
+    .media-game-schedule-lists
+      - @game_schedule_groups.each do |kickoff_date, game_schedules|
+        .media-game-schedule-lists__list
+          .media-game-schedule-list
+            .media-game-schedule-list__title
+              .media-subheader
+                = l kickoff_date, format: :default
+            .media-game-schedule-list__content
+              %table.media-game-schedule-content
+                %tr.media-game-schedule-content__header
+                  %th
+                    = t('view.media.game_schedules.index.game_field')
+                  %th
+                    = t('view.media.game_schedules.index.start_at')
+                  %th
+                    = t('view.media.game_schedules.index.tournament')
+                  %th
+                    = t('view.media.game_schedules.index.teams')
+                - game_schedules.each do |game_schedule|
+                  %tr.media-game-schedule-content__item
+                    %td
+                      = link_to game_schedule.game_field_name,
+                                game_fields_path(anchor: media_game_field_anchor(game_schedule.game_field)),
+                                class: 'common-text-link'
+                    %td
+                      = l game_schedule.start_at, format: :only_time
+                    %td
+                      = game_schedule.tournament_name
+                    %td
+                      = game_schedule.home_team_name
+                      vs.
+                      = game_schedule.visitor_team_name

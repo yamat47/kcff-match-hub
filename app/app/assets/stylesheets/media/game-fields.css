@@ -7,6 +7,7 @@
 }
 
 .media-game-field {
+  padding-top: 0.5rem;
   display: flex;
 
   & > * {

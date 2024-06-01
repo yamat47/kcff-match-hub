@@ -1,0 +1,6 @@
+.media-subheader {
+  padding: 0.25rem 0.5rem;
+  border-left: solid 5px var(--color-purple-700);
+  font-size: 1.25rem;
+  font-weight: bold;
+}

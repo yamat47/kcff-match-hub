@@ -10,7 +10,7 @@
     %section.media-game-fields-content
       - @game_fields.each do |game_field|
         .media-game-fields__item
-          .media-game-field
+          .media-game-field{ id: media_game_field_anchor(game_field) }
             .media-game-field__map
               .media-game-field-map
                 %iframe.media-game-field-map-iframe{ src: game_field.google_maps_embed_src_url,

@@ -28,7 +28,9 @@
                 - game_schedules.each do |game_schedule|
                   %tr.media-game-schedule-content__item
                     %td
-                      = game_schedule.game_field_name
+                      = link_to game_schedule.game_field_name,
+                                game_fields_path(anchor: media_game_field_anchor(game_schedule.game_field)),
+                                class: 'common-text-link'
                     %td
                       = l game_schedule.start_at, format: :only_time
                     %td

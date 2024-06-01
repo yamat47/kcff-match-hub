@@ -11,6 +11,8 @@ ja:
           attributes:
             visitor_team:
               duplicated: はホームチームと同じチームを選択できません
+    models:
+      game_field: 試合会場
     attributes:
       administrator:
         universal_id: ID
@@ -230,6 +232,7 @@ ja:
       default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
+      only_time: "%H:%M"
     pm: 午後
 
   view:
@@ -269,6 +272,12 @@ ja:
         search: キーワード検索
       no_data: 未設定
     media:
+      game_schedules:
+        index:
+          game_field: 会場
+          start_at: K.O.
+          tournament: 大会
+          teams: 対戦チーム
       breadcrumbs:
         root: トップページ
         game_fields:

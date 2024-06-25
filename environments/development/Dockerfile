@@ -1,4 +1,4 @@
-FROM ruby:3.3.1-alpine
+FROM ruby:3.3.3-alpine
 
 RUN apk update && apk add postgresql-client postgresql-dev build-base libxml2-dev libxslt-dev gcompat
 

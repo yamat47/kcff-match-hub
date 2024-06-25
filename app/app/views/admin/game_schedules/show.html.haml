@@ -65,3 +65,7 @@
                 .admin-field__value
                   = link_to @game_schedule.game_field_name, admin_game_field_path(@game_schedule.game_field),
                             class: 'common-text-link'
+      .admin-content-main__sections
+        .admin-content-sections
+          .admin-content-sections__section
+            = render 'admin/game_schedules/show/game_result_section', game_schedule: @game_schedule

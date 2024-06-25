@@ -11,6 +11,8 @@ class GameSchedule < ApplicationRecord
   belongs_to :game_field
   belongs_to :tournament
 
+  has_one :game_result, dependent: :destroy
+
   validates :start_at, presence: true
 
   validate :home_team_and_visitor_team_must_be_different
@@ -31,6 +33,9 @@ class GameSchedule < ApplicationRecord
   delegate :name, to: :visitor_team, prefix: true, allow_nil: true
   delegate :name, to: :game_field, prefix: true, allow_nil: true
   delegate :name, to: :tournament, prefix: true, allow_nil: true
+  delegate :result, to: :game_result, prefix: true, allow_nil: true
+  delegate :home_team_score, to: :game_result, prefix: true, allow_nil: true
+  delegate :visitor_team_score, to: :game_result, prefix: true, allow_nil: true
 
   def name
     "#{home_team_name} vs. #{visitor_team_name}"

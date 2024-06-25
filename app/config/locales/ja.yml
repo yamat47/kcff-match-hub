@@ -51,6 +51,15 @@ ja:
         universal_id: ID
         full_name: シーズン名
         short_name: シーズン略称
+      game_result:
+        result: 試合結果
+        home_team_score: ホームチーム得点
+        visitor_team_score: ビジターチーム得点
+      game_result/result:
+        home_win: ホーム勝利
+        visitor_win: ビジター勝利
+        draw: 引き分け
+        canceled: 中止
 
   date:
     abbr_day_names:

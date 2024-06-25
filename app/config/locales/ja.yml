@@ -255,6 +255,8 @@ ja:
           index: チーム
           logos:
             edit: ロゴ画像編集
+          team_profiles:
+            edit: チームプロフィール編集
         seasons:
           index: シーズン
       button:

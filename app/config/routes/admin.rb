@@ -13,5 +13,7 @@ namespace :admin do
     resource :team_profile, module: :teams, only: %i[new create edit update]
   end
   resources :seasons
-  resources :game_schedules
+  resources :game_schedules do
+    resource :game_result, module: :game_schedules, only: %i[new create edit update destroy]
+  end
 end

@@ -1,0 +1,38 @@
+= form_with model: game_result, url:, local: true do |form|
+  .admin-fields
+    .admin-fields__field
+      .admin-field
+        .admin-field__label
+          = GameResult.human_attribute_name(:result)
+        .admin-field__value
+          .admin-form-radio-group
+            - GameResult.results.each_key do |key|
+              %label.admin-form-radio-container
+                = form.radio_button :result, key, class: 'admin-form-radio-button', required: true
+                = form.label "result_#{key}", GameResult.human_attribute_name("result.#{key}"),
+                             class: 'admin-form-radio-label'
+    .admin-fields__field
+      .admin-field
+        .admin-field__label
+          = GameResult.human_attribute_name(:home_team_score)
+        .admin-field__value
+          = form.number_field :home_team_score, class: 'admin-form-text_field', required: true, min: 0
+    .admin-fields__field
+      .admin-field
+        .admin-field__label
+          = GameResult.human_attribute_name(:visitor_team_score)
+        .admin-field__value
+          = form.number_field :visitor_team_score, class: 'admin-form-text_field', required: true, min: 0
+    - if game_result.errors.any?
+      .admin-fields__field
+        .admin-form-errors
+          %ul.admin-form-error-list
+            - game_result.errors.full_messages.each do |message|
+              %li.admin-form-error-list__item
+                = message
+    .admin-fields__field
+      .admin-form-action_buttons
+        .admin-form-action_buttons__action
+          = form.submit t('view.admin.button.save'), class: 'admin-form-action_button'
+        .admin-form-action_buttons__action
+          = link_to t('view.admin.button.cancel'), cancel_path, class: 'admin-form-action_button is-cancel'

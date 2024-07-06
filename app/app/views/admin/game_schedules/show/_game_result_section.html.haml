@@ -1,0 +1,49 @@
+%section.admin-content-section
+  .admin-content-section__title
+    %h2.admin-content-section-title
+      .admin-content-section-title__text
+        試合結果
+      .admin-content-section-title__actions
+        .admin-content-section-title-actions
+          - if game_schedule.game_result.present?
+            .admin-content-section-title-actions__action
+              = link_to t('view.admin.button.edit'),
+                        edit_admin_game_schedule_game_result_path(game_schedule_id: game_schedule),
+                        class: 'admin-content-section-title-action_button'
+            .admin-content-section-title-actions__action
+              = button_to t('view.admin.button.destroy'),
+                          admin_game_schedule_game_result_path(game_schedule_id: game_schedule),
+                          method: :delete,
+                          data: data_for_confirm(confirm_message: t('view.admin.confirm.destroy')),
+                          class: 'admin-content-section-title-action_button'
+          - else
+            .admin-content-section-title-actions__action
+              = link_to t('view.admin.button.edit'),
+                        new_admin_game_schedule_game_result_path(game_schedule_id: game_schedule),
+                        class: 'admin-content-section-title-action_button'
+  .admin-content-section__fields
+    %table.admin-content-section-fields
+      %tr.admin-content-section-field
+        %th.admin-content-section-field__label
+          .admin-content-section-field-label
+            = GameResult.human_attribute_name(:result)
+        %td.admin-content-section-field__value
+          .admin-content-section-field-value
+            - if game_schedule.game_result
+              = GameResult.human_attribute_name("result.#{game_schedule.game_result_result}")
+            - else
+              = t('view.admin.no_data')
+      %tr.admin-content-section-field
+        %th.admin-content-section-field__label
+          .admin-content-section-field-label
+            = GameResult.human_attribute_name(:home_team_score)
+        %td.admin-content-section-field__value
+          .admin-content-section-field-value
+            = game_schedule.game_result_home_team_score.presence || t('view.admin.no_data')
+      %tr.admin-content-section-field
+        %th.admin-content-section-field__label
+          .admin-content-section-field-label
+            = GameResult.human_attribute_name(:visitor_team_score)
+        %td.admin-content-section-field__value
+          .admin-content-section-field-value
+            = game_schedule.game_result_visitor_team_score.presence || t('view.admin.no_data')

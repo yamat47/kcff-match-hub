@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_05_034131) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_25_031931) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -61,6 +61,18 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_034131) do
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_game_fields_on_name", unique: true
     t.index ["universal_id"], name: "index_game_fields_on_universal_id", unique: true
+  end
+
+  create_table "game_results", comment: "試合結果", force: :cascade do |t|
+    t.string "universal_id", null: false, comment: "ユニバーサルID"
+    t.bigint "game_schedule_id", null: false, comment: "試合スケジュールID"
+    t.integer "home_team_score", null: false, comment: "ホームチームの得点"
+    t.integer "visitor_team_score", null: false, comment: "ビジターチームの得点"
+    t.string "result", null: false, comment: "試合結果ステータス"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_schedule_id"], name: "index_game_results_on_game_schedule_id", unique: true
+    t.index ["universal_id"], name: "index_game_results_on_universal_id", unique: true
   end
 
   create_table "game_schedules", comment: "試合スケジュール", force: :cascade do |t|
@@ -121,6 +133,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_034131) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "game_results", "game_schedules"
   add_foreign_key "game_schedules", "game_fields"
   add_foreign_key "game_schedules", "seasons"
   add_foreign_key "game_schedules", "teams", column: "home_team_id"

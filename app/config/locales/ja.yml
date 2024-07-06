@@ -11,6 +11,14 @@ ja:
           attributes:
             visitor_team:
               duplicated: はホームチームと同じチームを選択できません
+        game_result:
+          attributes:
+            result:
+              inconsistent: と得点の整合性が取れていません
+            home_team_score:
+              nonzero: は試合結果が中止の場合は0にしてください
+            visitor_team_score:
+              nonzero: は試合結果が中止の場合は0にしてください
     models:
       game_field: 試合会場
     attributes:
@@ -51,6 +59,15 @@ ja:
         universal_id: ID
         full_name: シーズン名
         short_name: シーズン略称
+      game_result:
+        result: 試合結果
+        home_team_score: ホームチームの得点
+        visitor_team_score: ビジターチームの得点
+      game_result/result:
+        home_win: ホーム勝利
+        visitor_win: ビジター勝利
+        draw: 引き分け
+        canceled: 中止
 
   date:
     abbr_day_names:
@@ -255,6 +272,8 @@ ja:
           index: チーム
           logos:
             edit: ロゴ画像編集
+          team_profiles:
+            edit: チームプロフィール編集
         seasons:
           index: シーズン
       button:

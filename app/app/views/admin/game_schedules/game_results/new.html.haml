@@ -1,0 +1,19 @@
+:ruby
+  add_breadcrumb t('view.admin.breadcrumbs.game_schedules.index'), admin_game_schedules_path
+  add_breadcrumb @game_schedule.name, admin_game_schedule_path(@game_schedule)
+  add_breadcrumb t('view.admin.breadcrumbs.game_schedules.game_results.edit')
+
+.admin-content
+  .admin-content__title
+    .admin-title
+      .admin-title__image
+        = image_tag 'icon-calendar.png', class: 'admin-title-image'
+      .admin-title__text
+        %h1.admin-title_text
+          = @game_schedule.name
+
+  .admin-content__fields
+    = render 'form', game_result: @game_result,
+                     url: admin_game_schedule_game_result_path(game_schedule_id: @game_schedule.id),
+                     method: :post,
+                     cancel_path: admin_game_schedule_path(@game_schedule)

@@ -109,3 +109,20 @@
     border: none;
   }
 }
+
+.admin-form-radio-group {
+  display: flex;
+  gap: 1.0rem;
+  align-items: center;
+}
+
+.admin-form-radio-container {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  cursor: pointer;
+}
+
+.admin-form-radio-button {
+  appearance: auto;
+}

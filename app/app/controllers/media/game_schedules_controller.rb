@@ -28,7 +28,9 @@ module Media
     def ensure_season_param
       return if params[:season].present?
 
-      latest_season_param = Season.latest.short_name
+      latest_season_param = Season.game_schedule_associated
+                                  .latest
+                                  .short_name
 
       redirect_to season_game_schedules_path(season: latest_season_param)
     end

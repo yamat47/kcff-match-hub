@@ -1,0 +1,14 @@
+.media-game-schedule-score {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.media-game-schedule-score-home, .media-game-schedule-score-visitor {
+  width: 2.0rem;
+  color: var(--color-purple-700);
+  font-weight: bold;
+}
+
+.media-game-schedule-score-separator::before {
+  content: '-';
+}

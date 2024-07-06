@@ -20,8 +20,8 @@
   width: 100%;
 
   .media-game-schedule-content__header, .media-game-schedule-content__item {
-    * {
-      padding: 0.5rem;
+    > * {
+      padding: 0.75rem;
       white-space: nowrap;
     }
   }
@@ -37,6 +37,10 @@
   .media-game-schedule-content__item {
     * {
       font-size: 0.875rem;
+
+      &.is-centered {
+        text-align: center;
+      }
     }
   }
 }

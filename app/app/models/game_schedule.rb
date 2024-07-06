@@ -18,6 +18,7 @@ class GameSchedule < ApplicationRecord
   validate :home_team_and_visitor_team_must_be_different
 
   scope :start_at_ordered, -> { order(start_at: :asc) }
+  scope :game_field_ordered, -> { order(game_field_id: :asc) }
 
   scope :search_by_keyword, lambda { |query|
     joins(:home_team, :visitor_team, :game_field, :tournament)

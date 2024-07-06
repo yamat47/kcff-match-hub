@@ -11,3 +11,9 @@
   font-size: 2rem;
   font-weight: bold;
 }
+
+.media-list-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}

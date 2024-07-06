@@ -1,0 +1,10 @@
+.media-game-schedule-season-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+
+  @media (min-width: 768px) {
+    gap: 1rem;
+  }
+}

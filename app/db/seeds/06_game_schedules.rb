@@ -15,7 +15,7 @@ Season.find_each do |season|
       from: DateTime.new(year, 1, 2),
       to: DateTime.new(year, 12, 30)
     ).beginning_of_week(:sunday)
-     .change(hour: rand(0..23), min: rand(0..59))
+                          .change(hour: rand(0..23), min: rand(0..59))
 
     FactoryBot.create(
       :game_schedule,

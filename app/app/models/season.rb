@@ -19,6 +19,8 @@ class Season < ApplicationRecord
   }
 
   scope :order_by_full_name, -> { order(:full_name) }
+  scope :order_by_full_name_desc, -> { order(full_name: :desc) }
+  scope :game_schedule_associated, -> { where.associated(:game_schedules) }
 
   class << self
     def latest

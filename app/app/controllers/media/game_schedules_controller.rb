@@ -2,6 +2,8 @@
 
 module Media
   class GameSchedulesController < ApplicationController
+    SEASONS_LIMIT = 8
+
     before_action :ensure_season_param
 
     def index
@@ -9,11 +11,16 @@ module Media
 
       game_schedules = GameSchedule.start_at_ordered
                                    .game_field_ordered
-                                   .where(season: season)
+                                   .where(season:)
                                    .preload(:home_team, :visitor_team, :game_field, :tournament)
 
       # group by date.
       @game_schedule_groups = game_schedules.group_by { |game_schedule| game_schedule.start_at.to_date }
+
+      @seasons = Season.game_schedule_associated
+                       .order_by_full_name_desc
+                       .distinct
+                       .limit(SEASONS_LIMIT)
     end
 
     private

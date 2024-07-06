@@ -7,8 +7,8 @@ module Media
     def index
       season = Season.find_by!(short_name: params[:season])
 
-      # FIXME: order by game_field.
       game_schedules = GameSchedule.start_at_ordered
+                                   .game_field_ordered
                                    .where(season: season)
                                    .preload(:home_team, :visitor_team, :game_field, :tournament)
 

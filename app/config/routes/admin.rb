@@ -14,6 +14,6 @@ namespace :admin do
   end
   resources :seasons
   resources :game_schedules do
-    resource :game_result, module: :game_schedules, only: %i[new create edit update]
+    resource :game_result, module: :game_schedules, only: %i[new create edit update destroy]
   end
 end

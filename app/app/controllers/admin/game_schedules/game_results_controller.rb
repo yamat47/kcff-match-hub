@@ -39,6 +39,15 @@ module Admin
         end
       end
 
+      def destroy
+        @game_schedule = GameSchedule.find(params[:game_schedule_id])
+        @game_result = @game_schedule.game_result
+
+        @game_result.destroy
+
+        redirect_to admin_game_schedule_path(@game_schedule)
+      end
+
       private
 
       def game_result_params

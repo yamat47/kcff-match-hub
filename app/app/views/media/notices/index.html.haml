@@ -12,12 +12,12 @@
         - @notices.each do |notice|
           .media-notice-list__item
             = link_to notice_path(notice.universal_id), class: 'media-notice-list-item' do
-              .media-notice-list-item__date
-                .media-notice-list-item-date
-                  = l notice.published_at, format: :long_kanji
-              .media-notice-list-item__title
-                .media-notice-list-item-title
-                  = notice.title
+              .media-notice-list-item__header
+                .media-notice-list-item-header
+                  .media-notice-list-item-date
+                    = l notice.published_at, format: :long_kanji
+                  .media-notice-list-item-title
+                    = notice.title
               .media-notice-list-item__content
                 .media-notice-list-item-content
                   = truncate(notice.content, length: 100)

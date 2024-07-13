@@ -34,6 +34,12 @@
             .admin-fields__field
               .admin-field
                 .admin-field__label
+                  = GameSchedule.human_attribute_name(:season)
+                .admin-field__value
+                  = @game_schedule.season_name
+            .admin-fields__field
+              .admin-field
+                .admin-field__label
                   = GameSchedule.human_attribute_name(:start_at)
                 .admin-field__value
                   = l(@game_schedule.start_at, format: :long)

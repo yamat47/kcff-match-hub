@@ -20,6 +20,15 @@
   }
 }
 
+.admin-form-text_area {
+  border: 1px solid var(--default-border-color);
+  border-radius: var(--input-border-radius);
+  padding: 0.5rem;
+  width: 45rem;
+  min-height: 20rem;
+  resize: vertical;
+}
+
 .admin-form-file_field__wrapper {
   display: flex;
   flex-direction: column;

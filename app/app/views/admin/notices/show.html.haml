@@ -1,0 +1,47 @@
+:ruby
+  add_breadcrumb t('view.admin.breadcrumbs.notices.index'), admin_notices_path
+  add_breadcrumb @notice.title
+
+.admin-content
+  .admin-content__title
+    .admin-title
+      .admin-title__image
+        = image_tag 'icon-newspaper.png', class: 'admin-title-image'
+      .admin-title__text
+        %h1.admin-title_text
+          = @notice.title
+      .admin-title__actions
+        .admin-title-actions
+          .admin-title-actions__action
+            = link_to t('view.admin.button.edit'), edit_admin_notice_path(@notice),
+                      class: 'admin-title-action_button'
+          .admin-title-actions__action
+            = button_to t('view.admin.button.destroy'), admin_notice_path(@notice),
+                        method: :delete, data: data_for_confirm(confirm_message: t('view.admin.confirm.destroy')),
+                        class: 'admin-title-action_button'
+
+  .admin-content__main
+    .admin-content-main
+      .admin-content-main__fields
+        .admin-content__fields
+          .admin-fields
+            .admin-fields__field
+              .admin-field
+                .admin-field__label
+                  = Notice.human_attribute_name(:universal_id)
+                .admin-field__value
+                  = @notice.universal_id
+            .admin-fields__field
+              .admin-field
+                .admin-field__label
+                  = Notice.human_attribute_name(:title)
+                .admin-field__value
+                  = @notice.title
+            .admin-fields__field
+              .admin-field
+                .admin-field__label
+                  = Notice.human_attribute_name(:content)
+                .admin-field__value
+                  -# TODO: autolink
+                  -# TODO: simple_format
+                  = @notice.content

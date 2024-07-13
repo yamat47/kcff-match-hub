@@ -1,25 +1,31 @@
-= form_with model: administrator, url:, local: true do |form|
+= form_with model: notice, url:, local: true do |form|
   .admin-fields
     .admin-fields__field
       .admin-field
         .admin-field__label
-          = Administrator.human_attribute_name(:universal_id)
+          = Notice.human_attribute_name(:universal_id)
         .admin-field__value
-          - if administrator.persisted?
+          - if notice.persisted?
             = form.text_field :universal_id, class: 'admin-form-text_field', readonly: true
           - else
             = t('view.admin.supplement.universal_id_auto_generated')
     .admin-fields__field
       .admin-field
         .admin-field__label
-          = Administrator.human_attribute_name(:email)
+          = Notice.human_attribute_name(:title)
         .admin-field__value
-          = form.email_field :email, class: 'admin-form-text_field is-long', required: true
-    - if administrator.errors.any?
+          = form.text_field :title, class: 'admin-form-text_field is-long', required: true
+    .admin-fields__field
+      .admin-field
+        .admin-field__label
+          = Notice.human_attribute_name(:content)
+        .admin-field__value
+          = form.text_area :content, class: 'admin-form-text_area is-long', required: true
+    - if notice.errors.any?
       .admin-fields__field
         .admin-form-errors
           %ul.admin-form-error-list
-            - administrator.errors.full_messages.each do |message|
+            - notice.errors.full_messages.each do |message|
               %li.admin-form-error-list__item
                 = message
     .admin-fields__field

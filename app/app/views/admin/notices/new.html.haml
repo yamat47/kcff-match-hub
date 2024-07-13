@@ -1,0 +1,15 @@
+:ruby
+  add_breadcrumb t('view.admin.breadcrumbs.notices.index'), admin_notices_path
+  add_breadcrumb t('view.admin.breadcrumbs.actions.new')
+
+.admin-content
+  .admin-content__title
+    .admin-title
+      .admin-title__image
+        = image_tag 'icon-newspaper.png', class: 'admin-title-image'
+      .admin-title__text
+        %h1.admin-title_text
+          （ID未設定）
+
+  .admin-content__fields
+    = render 'form', notice: @notice, url: admin_notices_path, cancel_path: admin_notices_path

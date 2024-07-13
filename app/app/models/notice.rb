@@ -3,8 +3,10 @@
 class Notice < ApplicationRecord
   include UniversalId
 
-  setup_universal_id('adm')
+  setup_universal_id('ntc')
 
   validates :title, presence: true
   validates :content, presence: true
+
+  scope :search_by_keyword, ->(query) { where('universal_id LIKE :query OR title LIKE :query OR content LIKE :query', query: "%#{query}%") }
 end

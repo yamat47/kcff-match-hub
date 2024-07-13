@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_25_031931) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_13_133210) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -91,6 +91,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_25_031931) do
     t.index ["tournament_id"], name: "index_game_schedules_on_tournament_id"
     t.index ["universal_id"], name: "index_game_schedules_on_universal_id", unique: true
     t.index ["visitor_team_id"], name: "index_game_schedules_on_visitor_team_id"
+  end
+
+  create_table "notices", force: :cascade do |t|
+    t.string "title", null: false, comment: "タイトル"
+    t.text "content", null: false, comment: "内容"
+    t.string "universal_id", null: false, comment: "ユニバーサルID"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["universal_id"], name: "index_notices_on_universal_id", unique: true
   end
 
   create_table "seasons", force: :cascade do |t|

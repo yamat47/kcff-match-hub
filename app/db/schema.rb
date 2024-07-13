@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_13_133210) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_13_143722) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -99,6 +99,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_13_133210) do
     t.string "universal_id", null: false, comment: "ユニバーサルID"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "published_at", comment: "公開日時"
+    t.index ["published_at"], name: "index_notices_on_published_at"
     t.index ["universal_id"], name: "index_notices_on_universal_id", unique: true
   end
 

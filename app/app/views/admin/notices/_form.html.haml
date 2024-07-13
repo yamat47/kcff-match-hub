@@ -18,6 +18,22 @@
     .admin-fields__field
       .admin-field
         .admin-field__label
+          = Notice.human_attribute_name(:published)
+        .admin-field__value
+          .admin-form-radio-group
+            %label.admin-form-radio-container
+              = form.radio_button :published, true, class: 'admin-form-radio-button', required: true
+              = form.label 'published_true',
+                           Notice.human_attribute_name('published.published'),
+                           class: 'admin-form-radio-label'
+            %label.admin-form-radio-container
+              = form.radio_button :published, false, class: 'admin-form-radio-button', required: true
+              = form.label 'published_false',
+                           Notice.human_attribute_name('published.unpublished'),
+                           class: 'admin-form-radio-label'
+    .admin-fields__field
+      .admin-field
+        .admin-field__label
           = Notice.human_attribute_name(:content)
         .admin-field__value
           = form.text_area :content, class: 'admin-form-text_area is-long', required: true

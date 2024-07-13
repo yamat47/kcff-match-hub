@@ -17,10 +17,12 @@ module Admin
 
     def new
       @notice = Notice.new
+      @notice.published = false
     end
 
     def edit
       @notice = Notice.find(params[:id])
+      @notice.published = @notice.published?
     end
 
     def create
@@ -58,7 +60,11 @@ module Admin
     end
 
     def notice_params
-      params.require(:notice).permit(:title, :content)
+      permitted_params = params.require(:notice).permit(:title, :content, :published)
+
+      permitted_params[:published] = permitted_params[:published] == 'true'
+
+      permitted_params
     end
   end
 end

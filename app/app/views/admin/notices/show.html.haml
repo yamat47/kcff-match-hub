@@ -40,6 +40,15 @@
             .admin-fields__field
               .admin-field
                 .admin-field__label
+                  = Notice.human_attribute_name(:published)
+                .admin-field__value
+                  - if @notice.published?
+                    = Notice.human_attribute_name('published.published')
+                  - else
+                    = Notice.human_attribute_name('published.unpublished')
+            .admin-fields__field
+              .admin-field
+                .admin-field__label
                   = Notice.human_attribute_name(:content)
                 .admin-field__value
                   .common-document-content

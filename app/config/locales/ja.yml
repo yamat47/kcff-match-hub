@@ -72,6 +72,10 @@ ja:
         universal_id: ID
         title: タイトル
         content: 内容
+        published: 公開状況
+      notice/published:
+        published: 公開中
+        unpublished: 非公開
 
   date:
     abbr_day_names:

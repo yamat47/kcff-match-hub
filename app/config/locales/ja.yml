@@ -68,6 +68,10 @@ ja:
         visitor_win: ビジター勝利
         draw: 引き分け
         canceled: 中止
+      notice:
+        universal_id: ID
+        title: タイトル
+        content: 内容
 
   date:
     abbr_day_names:
@@ -276,6 +280,8 @@ ja:
             edit: チームプロフィール編集
         seasons:
           index: シーズン
+        notices:
+          index: お知らせ
       button:
         new: 追加する
         edit: 編集する

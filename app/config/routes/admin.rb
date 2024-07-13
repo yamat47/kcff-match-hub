@@ -16,4 +16,5 @@ namespace :admin do
   resources :game_schedules do
     resource :game_result, module: :game_schedules, only: %i[new create edit update destroy]
   end
+  resources :notices
 end

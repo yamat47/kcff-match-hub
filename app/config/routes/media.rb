@@ -7,4 +7,5 @@ with_options module: :media do
   resources :game_schedules, only: :index do
     get ':season', on: :collection, action: :index, as: :season
   end
+  resources :notices, only: %i[index show]
 end

@@ -1,0 +1,23 @@
+:ruby
+  add_breadcrumb t('view.media.breadcrumbs.root'), root_path
+  add_breadcrumb t('view.media.breadcrumbs.notices.index')
+
+.media-list
+  .media-list__title
+    %h1.media-list-title
+      お知らせ
+  .media-list__content
+    .media-list-content
+      .media-notice-list
+        - @notices.each do |notice|
+          .media-notice-list__item
+            = link_to notice_path(notice.universal_id), class: 'media-notice-list-item' do
+              .media-notice-list-item__date
+                .media-notice-list-item-date
+                  = l notice.published_at, format: :long_kanji
+              .media-notice-list-item__title
+                .media-notice-list-item-title
+                  = notice.title
+              .media-notice-list-item__content
+                .media-notice-list-item-content
+                  = truncate(notice.content, length: 100)

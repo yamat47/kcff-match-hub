@@ -25,6 +25,8 @@
             = Notice.human_attribute_name :universal_id
           %th.admin-list-cell.is-header
             = Notice.human_attribute_name :title
+          %th.admin-list-cell.is-header
+            = Notice.human_attribute_name :published
       %tbody.admin-list__body.admin-list-body
         - @notices.each do |notice|
           %tr.admin-list-row{ data: list_data_attributes(href: admin_notice_path(notice)) }
@@ -36,5 +38,11 @@
             %td.admin-list-cell
               .admin-list-cell
                 = notice.title
+            %td.admin-list-cell
+              .admin-list-cell
+                - if notice.published?
+                  = Notice.human_attribute_name('published.published')
+                - else
+                  = Notice.human_attribute_name('published.unpublished')
   .admin-list_container__pagination
     = paginate @notices, views_prefix: 'admin'

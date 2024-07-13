@@ -256,6 +256,7 @@ ja:
     formats:
       default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
       long: "%Y/%m/%d %H:%M"
+      long_kanji: "%Y年%m月%d日 %H:%M"
       short: "%m/%d %H:%M"
       only_time: "%H:%M"
     pm: 午後
@@ -315,6 +316,8 @@ ja:
           index: 日程・結果
         teams:
           index: 所属チーム
+        notices:
+          index: お知らせ
 
   views:
     pagination:

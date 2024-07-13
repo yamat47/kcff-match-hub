@@ -42,6 +42,5 @@
                 .admin-field__label
                   = Notice.human_attribute_name(:content)
                 .admin-field__value
-                  -# TODO: autolink
-                  -# TODO: simple_format
-                  = @notice.content
+                  .common-document-content
+                    = formatted_notice_content(@notice.content)

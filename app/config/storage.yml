@@ -10,11 +10,15 @@ amazon:
   service: S3
   access_key_id: <%= ENV.fetch('FILE_AWS_ACCESS_KEY_ID', '') %>
   secret_access_key: <%= ENV.fetch('FILE_AWS_SECRET_ACCESS_KEY', '') %>
-  region: ap-northeast-1
-  endpoint: <%= ENV.fetch('FILE_AWS_S3_ENDPOINT', '') %>
+  region: <%= ENV.fetch('FILE_AWS_REGION', '') %>
   bucket: <%= ENV.fetch('FILE_AWS_S3_BUCKET', '') %>
   force_path_style: true
   public: true
+
+  # Use the following if you want to use an endpoint with S3 (ex: MinIO)
+  <% if ENV.fetch('FILE_AWS_S3_ENDPOINT', nil) %>
+  endpoint: <%= ENV.fetch('FILE_AWS_S3_ENDPOINT', '') %>
+  <% end %>
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:

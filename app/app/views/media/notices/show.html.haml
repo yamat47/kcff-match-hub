@@ -1,0 +1,24 @@
+:ruby
+  add_breadcrumb t('view.media.breadcrumbs.root'), root_path
+  add_breadcrumb t('view.media.breadcrumbs.notices.index'), notices_path
+  add_breadcrumb @notice.title
+
+.media-list
+  .media-list__title
+    %h1.media-list-title
+      お知らせ
+  .media-list__content
+    .media-list-content
+      .media-notice
+        .media-notice__header
+          .media-notice-header
+            .media-notice-date
+              = l @notice.published_at, format: :long_kanji
+            .media-notice-title
+              = @notice.title
+        .media-notice__content
+          .media-notice-content.common-document-content
+            = formatted_notice_content(@notice.content)
+        .media-notice__footer
+          .media-notice-footer
+            = link_to 'お知らせ一覧に戻る', notices_path, class: 'common-text-link'

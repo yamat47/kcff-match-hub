@@ -4,4 +4,6 @@ require_relative 'config/application'
 
 Rails.application.load_tasks
 
-task default: %i[spec rubocop haml_lint]
+# RSpec, RuboCop, haml-lint is only for local development.
+# in production, we don't need to run these tasks.
+task default: %i[spec rubocop haml_lint] if Rails.env.local?

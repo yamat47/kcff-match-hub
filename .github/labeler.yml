@@ -1,0 +1,11 @@
+"changed:environments":
+  - changed-files:
+    - any-glob-to-any-file: environments/**
+
+"changed:app":
+  - changed-files:
+    - any-glob-to-any-file: app/**
+
+"changed:github":
+  - changed-files:
+    - any-glob-to-any-file: .github/**

@@ -35,6 +35,10 @@ Rails/NotNullColumn:
   Exclude:
     - db/migrate/20240505034131_add_season_id_to_game_schedules.rb
 
+Rails/SkipsModelValidations:
+  Exclude:
+    - db/migrate/20240810154235_add_service_name_to_active_storage_blobs.active_storage.rb
+
 RSpec/MultipleExpectations:
   Enabled: false
 

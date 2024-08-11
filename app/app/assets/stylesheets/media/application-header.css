@@ -16,14 +16,14 @@
 }
 
 .application-header-logo {
-  height: 64px;
+  height: 36px;
 
   img {
     height: 100%;
   }
 
   @media (max-width: 599px) {
-    height: 48px;
+    height: 24px;
   }
 }
 

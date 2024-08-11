@@ -1,0 +1,20 @@
+.media-home {
+  width: 90vw;
+  margin-inline: auto;
+
+  @media (min-width: 768px) {
+    padding-block: 4rem;
+    width: 48rem;
+  }
+}
+
+.media-home-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.media-home-section-button {
+  display: flex;
+  justify-content: flex-end;
+}

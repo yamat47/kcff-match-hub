@@ -1,0 +1,16 @@
+.media-button {
+  padding: 0.5rem 1rem;
+  border: solid 1px var(--color-gray-500);
+  border-radius: var(--button-border-radius);
+  width: fit-content;
+  display: flex;
+  gap: 1.0rem;
+  align-items: center;
+  color: var(--color-gray-500);
+  font-size: 0.875rem;
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--color-gray-100);
+  }
+}

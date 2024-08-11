@@ -2,6 +2,12 @@
 
 module Media
   class HomesController < ApplicationController
-    def show; end
+    NOTICES_LIMIT = 3
+
+    def show
+      @notices = Notice.only_published
+                       .published_at_ordered
+                       .limit(NOTICES_LIMIT)
+    end
   end
 end

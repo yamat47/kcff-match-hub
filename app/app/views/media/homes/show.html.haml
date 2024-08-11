@@ -4,3 +4,26 @@
 .hero-container
   - images.each do |image|
     = image_tag image, class: 'hero-image'
+
+.media-home
+  .media-home__section
+    .media-home-section
+      .media-home-section__title
+        .media-subheader
+          最新のお知らせ
+      .media-home-section__content
+        .media-notice-list
+          - @notices.each do |notice|
+            .media-notice-list__item
+              = link_to notice_path(notice.universal_id), class: 'media-notice-list-item' do
+                .media-notice-list-item-title
+                  = notice.title
+                .media-notice-list-item-date
+                  = l notice.published_at, format: :long_kanji
+                .media-notice-list-item-button
+                  = image_tag 'icon-right-arrow.svg'
+      .media-home-section__button
+        .media-home-section-button
+          = link_to notices_path, class: 'media-button' do
+            %span 一覧を見る
+            = image_tag 'icon-right-arrow.svg'

@@ -2,6 +2,6 @@
 
 FactoryBot.define do
   factory :tournament do
-    name { Faker::Sports::Football.competition }
+    sequence(:name) { |n| "Tournament #{n}" }
   end
 end

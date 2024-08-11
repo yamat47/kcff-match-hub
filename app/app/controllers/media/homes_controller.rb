@@ -8,6 +8,8 @@ module Media
       @notices = Notice.only_published
                        .published_at_ordered
                        .limit(NOTICES_LIMIT)
+
+      @game_schedules = GameSchedule.next_scheduled_games
     end
   end
 end

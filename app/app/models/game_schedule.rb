@@ -17,6 +17,7 @@ class GameSchedule < ApplicationRecord
 
   validate :home_team_and_visitor_team_must_be_different
 
+  scope :from_today, ->(now: Time.current) { where(start_at: now.beginning_of_day..) }
   scope :start_at_ordered, -> { order(start_at: :asc) }
   scope :game_field_ordered, -> { order(game_field_id: :asc) }
 
@@ -28,6 +29,17 @@ class GameSchedule < ApplicationRecord
         OR game_fields.name LIKE :query
         OR tournaments.name LIKE :query
       SQL
+  }
+
+  # Returns all games scheduled on the same day as the next upcoming game.
+  scope :next_scheduled_games, lambda { |now: Time.current|
+    next_scheduled_datetime = from_today(now:).start_at_ordered
+                                              .first
+                                              &.start_at
+
+    return none unless next_scheduled_datetime
+
+    where(start_at: next_scheduled_datetime.all_day)
   }
 
   delegate :name, to: :home_team, prefix: true, allow_nil: true

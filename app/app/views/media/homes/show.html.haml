@@ -4,3 +4,72 @@
 .hero-container
   - images.each do |image|
     = image_tag image, class: 'hero-image'
+
+.media-home
+  .media-home__section
+    .media-home-section
+      .media-home-section__title
+        .media-subheader
+          お知らせ
+      .media-home-section__content
+        .media-notice-list
+          - @notices.each do |notice|
+            .media-notice-list__item
+              = link_to notice_path(notice.universal_id), class: 'media-notice-list-item' do
+                .media-notice-list-item-title
+                  = notice.title
+                .media-notice-list-item-date
+                  = l notice.published_at, format: :long_kanji
+                .media-notice-list-item-button
+                  = image_tag 'icon-right-arrow.svg'
+      .media-home-section__button
+        .media-home-section-button
+          = link_to notices_path, class: 'media-button' do
+            %span 一覧を見る
+            = image_tag 'icon-right-arrow.svg'
+
+  .media-home__section
+    .media-home-section
+      .media-home-section__title
+        .media-subheader
+          次回の試合
+      .media-home-section__content
+        .media-game-schedule-list
+          .media-game-schedule-list__content
+            %table.media-game-schedule-content
+              %tr.media-game-schedule-content__header
+                %th
+                  = t('view.media.game_schedules.index.game_field')
+                %th
+                  = t('view.media.game_schedules.index.start_at')
+                %th
+                  = t('view.media.game_schedules.index.tournament')
+                %th{ colspan: 3 }
+                  = t('view.media.game_schedules.index.teams')
+              - @game_schedules.each do |game_schedule|
+                %tr.media-game-schedule-content__item
+                  %td
+                    = link_to game_schedule.game_field_name,
+                              game_fields_path(anchor: media_game_field_anchor(game_schedule.game_field)),
+                              class: 'common-text-link'
+                  %td
+                    = l game_schedule.start_at, format: :only_time
+                  %td
+                    = game_schedule.tournament_name
+                  %td
+                    = game_schedule.home_team_name
+                  %td.is-centered
+                    .media-game-schedule-score
+                      .media-game-schedule-score-home
+                        = game_schedule.game_result_home_team_score
+                      .media-game-schedule-score-separator
+                      .media-game-schedule-score-visitor
+                        = game_schedule.game_result_visitor_team_score
+                  %td
+                    = game_schedule.visitor_team_name
+
+      .media-home-section__button
+        .media-home-section-button
+          = link_to game_schedules_path, class: 'media-button' do
+            %span 一覧を見る
+            = image_tag 'icon-right-arrow.svg'

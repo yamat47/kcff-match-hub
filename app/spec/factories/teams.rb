@@ -4,7 +4,7 @@ require 'open-uri'
 
 FactoryBot.define do
   factory :team do
-    name { Faker::Sports::Football.team }
+    sequence(:name) { |n| "Team #{n}" }
 
     after :build do |team|
       image = URI.parse('https://picsum.photos/500').open

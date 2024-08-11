@@ -23,7 +23,7 @@
   gap: 1rem;
 
   @media (max-width: 599px) {
-    padding: 0 0.5rem;
+    padding: 0 1.0rem;
   }
 }
 

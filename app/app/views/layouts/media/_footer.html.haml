@@ -1,0 +1,38 @@
+:ruby
+  menu_links = [
+    { title: 'お知らせ', path: notices_path },
+    { title: '日程・結果', path: game_schedules_path },
+    { title: '所属チーム', path: teams_path },
+    { title: '試合会場', path: game_fields_path }
+  ]
+
+  support_links = [
+    { title: 'お問い合わせ', path: 'https://forms.gle/Nv5ng9Up8DrY4B2G7' },
+    { title: '公式X（旧Twitter）', path: 'https://x.com/kcff_contact' }
+  ]
+
+.media-footer
+  .media-footer__logo
+    .media-footer-logo
+      = image_tag 'kcff-logo.png', class: 'media-footer-logo-image'
+  .media-footer__link-groups
+    .media-footer-link-groups
+      .media-footer-link-groups__link-group
+        .media-footer-link-group
+          .media-footer-link-group__title
+            .media-footer-link-group-title
+              メニュー
+          .media-footer-link-group__links
+            .media-footer-links
+              - menu_links.each do |menu_link|
+                = link_to menu_link[:title], menu_link[:path], class: 'media-footer-link common-text-link'
+      .media-footer-link-groups__link-group
+        .media-footer-link-group
+          .media-footer-link-group__title
+            .media-footer-link-group-title
+              サポート
+          .media-footer-link-group__links
+            .media-footer-links
+              - support_links.each do |support_link|
+                = link_to support_link[:title], support_link[:path],
+                          class: 'media-footer-link common-text-link', target: '_blank', rel: 'noopener noreferrer'

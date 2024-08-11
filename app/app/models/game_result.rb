@@ -7,7 +7,7 @@ class GameResult < ApplicationRecord
 
   belongs_to :game_schedule
 
-  enum result: { home_win: 'home_win', visitor_win: 'visitor_win', draw: 'draw', canceled: 'canceled' }
+  enum :result, { home_win: 'home_win', visitor_win: 'visitor_win', draw: 'draw', canceled: 'canceled' }
 
   validates :game_schedule, uniqueness: true
   validates :home_team_score, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }

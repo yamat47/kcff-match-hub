@@ -1,0 +1,55 @@
+:ruby
+  add_breadcrumb t('view.admin.breadcrumbs.media_page_settings.show')
+
+.admin-content
+  .admin-content__title
+    .admin-title
+      .admin-title__image
+        = image_tag 'icon-setting.png', class: 'admin-title-image'
+      .admin-title__text
+        %h1.admin-title_text
+          = t('view.admin.breadcrumbs.media_page_settings.show')
+
+  .admin-content__main
+    .admin-content-main
+      .admin-content-main__sections
+        .admin-content-sections
+          .admin-content-sections__section
+            %section.admin-content-section
+              .admin-content-section__title
+                %h2.admin-content-section-title
+                  .admin-content-section-title__text
+                    ヒーロー画像
+                  .admin-content-section-title__actions
+                    .admin-content-section-title-actions__action
+                      = link_to t('view.admin.button.new'),
+                                new_admin_media_page_setting_media_hero_image_path,
+                                class: 'admin-content-section-title-action_button'
+              .admin-content-section__fields
+                %table.admin-list
+                  %thead.admin-list__header.admin-list-header
+                    %tr
+                      %th.admin-list-cell.is-header
+                        = MediaHeroImage.human_attribute_name :universal_id
+                      %th.admin-list-cell.is-header
+                        = MediaHeroImage.human_attribute_name :image
+                      %th.admin-list-cell.is-header
+                  %tbody.admin-list__body.admin-list-body
+                    - @media_hero_images.each do |media_hero_image|
+                      %tr
+                        %td.admin-list-cell
+                          .admin-list-cell
+                            = media_hero_image.universal_id
+                        %td.admin-list-cell
+                          .admin-list-cell.is-image
+                            = image_tag media_hero_image.image, class: 'admin-list-cell-image'
+                        %td.admin-list-cell
+                          .admin-list-cell.is-actions
+                            = link_to t('view.admin.button.edit'),
+                                      edit_admin_media_page_setting_media_hero_image_path(media_hero_image),
+                                      class: 'common-text-link'
+                            = button_to t('view.admin.button.destroy'),
+                                        admin_media_page_setting_media_hero_image_path(media_hero_image),
+                                        method: :delete,
+                                        data: data_for_confirm(confirm_message: t('view.admin.confirm.destroy')),
+                                        class: 'common-text-link'

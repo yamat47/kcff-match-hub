@@ -1,7 +1,13 @@
 :ruby
-  images = %w[hero-1.jpg hero-2.jpg hero-3.jpg hero-4.jpg hero-5.jpg]
+  # If at least one image is registered, display using those images.
+  # If no images are registered, display using default images.
+  if @media_hero_images.present?
+    images = @media_hero_images.map(&:image)
+  else
+    images = %w[hero-1.jpg hero-2.jpg hero-3.jpg hero-4.jpg hero-5.jpg]
+  end
 
-.hero-container
+.hero-container{ data: { hero_image_count: images.count } }
   - images.each do |image|
     = image_tag image, class: 'hero-image'
 

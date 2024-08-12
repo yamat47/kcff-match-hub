@@ -1,7 +1,7 @@
 .admin-field {
-  min-height: 2rem;
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.25rem;
 
   .admin-field__label, .admin-field__value {
     display: flex;

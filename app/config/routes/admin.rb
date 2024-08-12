@@ -17,4 +17,7 @@ namespace :admin do
     resource :game_result, module: :game_schedules, only: %i[new create edit update destroy]
   end
   resources :notices
+  resource :media_page_setting, only: %i[show] do
+    resources :media_hero_images, module: :media_page_settings, only: %i[new create edit update destroy]
+  end
 end

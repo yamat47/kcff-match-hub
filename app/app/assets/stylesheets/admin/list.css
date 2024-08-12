@@ -36,6 +36,17 @@
     color: var(--color-gray-900);
     white-space: nowrap;
   }
+
+  &.is-image {
+    height: fit-content;
+  }
+
+  &.is-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.0rem;
+    word-break: keep-all;
+  }
 }
 
 .admin-list-cell-with-icon {

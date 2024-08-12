@@ -26,26 +26,122 @@
   bottom: 0;
   right: 0;
   opacity: 0;
+}
 
-  animation: image-switch-animation 25s infinite;
+.hero-container {
 
-  &:nth-child(1) {
-    animation-delay: 0s;
+  &[data-hero-image-count="1"] {
+    .hero-image {
+      animation: image-switch-animation 5s infinite;
+      &:nth-child(1) { animation-delay: 0s; }
+    }
   }
 
-  &:nth-child(2) {
-    animation-delay: 5s;
+  &[data-hero-image-count="2"] {
+    .hero-image {
+      animation: image-switch-animation 10s infinite;
+      &:nth-child(1) { animation-delay: 0s; }
+      &:nth-child(2) { animation-delay: 5s; }
+    }
   }
 
-  &:nth-child(3) {
-    animation-delay: 10s;
+  &[data-hero-image-count="3"] {
+    .hero-image {
+      animation: image-switch-animation 15s infinite;
+      &:nth-child(1) { animation-delay: 0s; }
+      &:nth-child(2) { animation-delay: 5s; }
+      &:nth-child(3) { animation-delay: 10s; }
+    }
   }
 
-  &:nth-child(4) {
-    animation-delay: 15s;
+  &[data-hero-image-count="4"] {
+    .hero-image {
+      animation: image-switch-animation 20s infinite;
+      &:nth-child(1) { animation-delay: 0s; }
+      &:nth-child(2) { animation-delay: 5s; }
+      &:nth-child(3) { animation-delay: 10s; }
+      &:nth-child(4) { animation-delay: 15s; }
+    }
   }
 
-  &:nth-child(5) {
-    animation-delay: 20s;
+  &[data-hero-image-count="5"] {
+    .hero-image {
+      animation: image-switch-animation 25s infinite;
+      &:nth-child(1) { animation-delay: 0s; }
+      &:nth-child(2) { animation-delay: 5s; }
+      &:nth-child(3) { animation-delay: 10s; }
+      &:nth-child(4) { animation-delay: 15s; }
+      &:nth-child(5) { animation-delay: 20s; }
+    }
+  }
+
+  &[data-hero-image-count="6"] {
+    .hero-image {
+      animation: image-switch-animation 30s infinite;
+      &:nth-child(1) { animation-delay: 0s; }
+      &:nth-child(2) { animation-delay: 5s; }
+      &:nth-child(3) { animation-delay: 10s; }
+      &:nth-child(4) { animation-delay: 15s; }
+      &:nth-child(5) { animation-delay: 20s; }
+      &:nth-child(6) { animation-delay: 25s; }
+    }
+  }
+
+  &[data-hero-image-count="7"] {
+    .hero-image {
+      animation: image-switch-animation 35s infinite;
+      &:nth-child(1) { animation-delay: 0s; }
+      &:nth-child(2) { animation-delay: 5s; }
+      &:nth-child(3) { animation-delay: 10s; }
+      &:nth-child(4) { animation-delay: 15s; }
+      &:nth-child(5) { animation-delay: 20s; }
+      &:nth-child(6) { animation-delay: 25s; }
+      &:nth-child(7) { animation-delay: 30s; }
+    }
+  }
+
+  &[data-hero-image-count="8"] {
+    .hero-image {
+      animation: image-switch-animation 40s infinite;
+      &:nth-child(1) { animation-delay: 0s; }
+      &:nth-child(2) { animation-delay: 5s; }
+      &:nth-child(3) { animation-delay: 10s; }
+      &:nth-child(4) { animation-delay: 15s; }
+      &:nth-child(5) { animation-delay: 20s; }
+      &:nth-child(6) { animation-delay: 25s; }
+      &:nth-child(7) { animation-delay: 30s; }
+      &:nth-child(8) { animation-delay: 35s; }
+    }
+  }
+
+  &[data-hero-image-count="9"] {
+    .hero-image {
+      animation: image-switch-animation 45s infinite;
+      &:nth-child(1) { animation-delay: 0s; }
+      &:nth-child(2) { animation-delay: 5s; }
+      &:nth-child(3) { animation-delay: 10s; }
+      &:nth-child(4) { animation-delay: 15s; }
+      &:nth-child(5) { animation-delay: 20s; }
+      &:nth-child(6) { animation-delay: 25s; }
+      &:nth-child(7) { animation-delay: 30s; }
+      &:nth-child(8) { animation-delay: 35s; }
+      &:nth-child(9) { animation-delay: 40s; }
+    }
+  }
+
+  &[data-hero-image-count="10"] {
+    .hero-image {
+      animation: image-switch-animation 50s infinite;
+      &:nth-child(1)  { animation-delay: 0s;  }
+      &:nth-child(2)  { animation-delay: 5s;  }
+      &:nth-child(3)  { animation-delay: 10s; }
+      &:nth-child(4)  { animation-delay: 15s; }
+      &:nth-child(5)  { animation-delay: 20s; }
+      &:nth-child(6)  { animation-delay: 25s; }
+      &:nth-child(7)  { animation-delay: 30s; }
+      &:nth-child(8)  { animation-delay: 35s; }
+      &:nth-child(9)  { animation-delay: 40s; }
+      &:nth-child(10) { animation-delay: 45s; }
+    }
   }
 }

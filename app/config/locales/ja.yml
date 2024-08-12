@@ -278,6 +278,9 @@ ja:
           index: 試合会場
         game_schedules:
           index: 試合
+          game_results:
+            new: 試合結果登録
+            edit: 試合結果更新
         tournaments:
           index: 大会
         teams:

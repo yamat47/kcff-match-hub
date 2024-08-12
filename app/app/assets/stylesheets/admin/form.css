@@ -135,3 +135,14 @@
 .admin-form-radio-button {
   appearance: auto;
 }
+
+.admin-form-help_text {
+  & * {
+    font-size: 0.875rem;
+    color: var(--color-gray-500);
+  }
+
+  & > p:not(:last-child) {
+    margin-bottom: 0.25rem;
+  }
+}

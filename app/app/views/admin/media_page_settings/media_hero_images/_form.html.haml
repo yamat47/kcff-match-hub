@@ -8,6 +8,14 @@
           .admin-form-file_field__wrapper
             = form.file_field :image, class: 'admin-form-file_field__field', accept: 'image/*', required: true
             = image_tag media_hero_image.image.url, class: 'admin-field-value-image' if media_hero_image.image.attached?
+        .admin-field__help
+          .admin-form-help_text
+            %p
+              画像はJPEGまたはPNG形式にしてアップロードをしてください。
+            %p
+              モバイルでは正方形、PC では 3:1 の横長の画像比で表示されます。
+              %br
+              PC での画面表示のために 3:1 の横長の画像を登録してください。推奨サイズは 1200px x 400px です。
     - if media_hero_image.errors.any?
       .admin-fields__field
         .admin-form-errors

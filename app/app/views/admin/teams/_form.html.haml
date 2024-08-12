@@ -15,6 +15,10 @@
           = Team.human_attribute_name(:name)
         .admin-field__value
           = form.text_field :name, class: 'admin-form-text_field', required: true
+        .admin-field__help
+          .admin-form-help_text
+            %p
+              例：慶應大学ダックス
     - if team.errors.any?
       .admin-fields__field
         .admin-form-errors

@@ -20,4 +20,5 @@ namespace :admin do
   resource :media_page_setting, only: %i[show] do
     resources :media_hero_images, module: :media_page_settings, only: %i[new create edit update destroy]
   end
+  resources :documents, only: [:show], param: :slug
 end

@@ -1,0 +1,54 @@
+:ruby
+  add_breadcrumb 'Google Map URLを取得する'
+
+.admin-document.markdown-body
+  %h1
+    Google Map URLを取得する
+
+  %p
+    試合会場に登録するための Google Map の URL を取得する方法について説明します。
+
+  %h2
+    1. Google Map を開く
+
+  %ul
+    %li
+      %a{ href: 'https://www.google.com/maps', target: '_blank', rel: 'noopener noreferrer' }
+        Google Map
+      を開き、試合会場を検索してください。
+    %li
+      検索結果にて「共有」ボタンを押してください。
+
+  = image_tag 'admin/documents/get_google_map_urls/search-result.png'
+
+  %h2
+    2. 共有用の URL を取得する
+
+  %ul
+    %li
+      共有用の URL が表示されます。
+    %li
+      その URL をコピーして手元に控えておいてください。
+
+  = image_tag 'admin/documents/get_google_map_urls/share-link.png'
+
+  %h2
+    3. 埋め込み用の URL を取得する
+
+  %ul
+    %li
+      「地図を埋め込む」を選択してください。
+    %li
+      埋め込み用の URL が表示されます。
+    %li
+      その URL のうち <code>src</code> に指定された内容だけを手元に控えておいてください。
+
+  = image_tag 'admin/documents/get_google_map_urls/embed-map.png'
+
+  %h2
+    4. URL を登録する
+
+  %p
+    登録画面にて、先ほど取得した URL を貼り付けてください。
+
+  = image_tag 'admin/documents/get_google_map_urls/input-urls.png'

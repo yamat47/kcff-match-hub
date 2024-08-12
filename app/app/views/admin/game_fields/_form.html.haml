@@ -15,6 +15,10 @@
           = GameField.human_attribute_name(:name)
         .admin-field__value
           = form.text_field :name, class: 'admin-form-text_field is-long', required: true
+        .admin-field__help
+          .admin-form-help_text
+            %p
+              例：東洋大学 川越キャンパス Hグラウンド
     .admin-fields__field
       .admin-field
         .admin-field__label
@@ -27,12 +31,36 @@
           = GameField.human_attribute_name(:google_maps_url)
         .admin-field__value
           = form.url_field :google_maps_url, class: 'admin-form-text_field is-long', required: true
+        .admin-field__help
+          .admin-form-help_text
+            %p
+              https://maps.app.goo.gl/ ではじまるURLを入力してください。
+              %br
+              詳しくは
+              = link_to 'こちらのドキュメント',
+                        admin_document_path(:get_google_map_urls),
+                        class: 'common-text-link',
+                        target: '_blank',
+                        rel: 'noopener noreferrer'
+              をご覧ください。
     .admin-fields__field
       .admin-field
         .admin-field__label
           = GameField.human_attribute_name(:google_maps_embed_src_url)
         .admin-field__value
           = form.url_field :google_maps_embed_src_url, class: 'admin-form-text_field is-long', required: true
+        .admin-field__help
+          .admin-form-help_text
+            %p
+              https://www.google.com/maps/embed ではじまる埋め込み用のURLを入力してください。
+              %br
+              詳しくは
+              = link_to 'こちらのドキュメント',
+                        admin_document_path(:get_google_map_urls),
+                        class: 'common-text-link',
+                        target: '_blank',
+                        rel: 'noopener noreferrer'
+              をご覧ください。
     - if game_field.errors.any?
       .admin-fields__field
         .admin-form-errors

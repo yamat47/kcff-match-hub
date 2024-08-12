@@ -4,7 +4,13 @@
   if @media_hero_images.present?
     images = @media_hero_images.map(&:image)
   else
-    images = %w[hero-1.jpg hero-2.jpg hero-3.jpg hero-4.jpg hero-5.jpg]
+    images = %w[
+      media/hero/hero-1.jpg
+      media/hero/hero-2.jpg
+      media/hero/hero-3.jpg
+      media/hero/hero-4.jpg
+      media/hero/hero-5.jpg
+    ]
   end
 
 .hero-container{ data: { hero_image_count: images.count } }

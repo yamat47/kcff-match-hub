@@ -5,19 +5,19 @@
         .admin-field__label
           = TeamProfile.human_attribute_name(:x_url)
         .admin-field__value
-          = form.url_field :x_url, class: 'admin-form-text_field'
+          = form.url_field :x_url, class: 'admin-form-text_field is-long'
     .admin-fields__field
       .admin-field
         .admin-field__label
           = TeamProfile.human_attribute_name(:instagram_url)
         .admin-field__value
-          = form.url_field :instagram_url, class: 'admin-form-text_field'
+          = form.url_field :instagram_url, class: 'admin-form-text_field is-long'
     .admin-fields__field
       .admin-field
         .admin-field__label
           = TeamProfile.human_attribute_name(:homepage_url)
         .admin-field__value
-          = form.url_field :homepage_url, class: 'admin-form-text_field'
+          = form.url_field :homepage_url, class: 'admin-form-text_field is-long'
     - if team_profile.errors.any?
       .admin-fields__field
         .admin-form-errors

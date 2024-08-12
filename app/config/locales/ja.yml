@@ -292,6 +292,8 @@ ja:
           index: お知らせ
         media_page_settings:
           show: Webページ設定
+          media_hero_images:
+            new: ヒーロー画像追加
       button:
         new: 追加する
         edit: 編集する

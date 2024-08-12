@@ -8,7 +8,12 @@ FactoryBot.define do
 
     after :build do |media_hero_image|
       image = URI.parse('https://picsum.photos/600/200').open
-      media_hero_image.image.attach(io: image, filename: "media_hero_image_#{media_hero_image.sort_order}.jpg", content_type: 'image/jpg')
+
+      media_hero_image.image.attach(
+        io: image,
+        filename: "media_hero_image_#{media_hero_image.sort_order}.jpg",
+        content_type: 'image/jpg'
+      )
     end
   end
 end

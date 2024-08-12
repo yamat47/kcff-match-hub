@@ -1,0 +1,17 @@
+:ruby
+  add_breadcrumb t('view.admin.breadcrumbs.media_page_settings.show'), admin_media_page_setting_path
+  add_breadcrumb t('view.admin.breadcrumbs.media_page_settings.media_hero_images.new')
+
+.admin-content
+  .admin-content__title
+    .admin-title
+      .admin-title__image
+        = image_tag 'icon-setting.png', class: 'admin-title-image'
+      .admin-title__text
+        %h1.admin-title_text
+          ヒーロー画像
+
+  .admin-content__fields
+    = render 'form', media_hero_image: @media_hero_image,
+                     url: admin_media_page_setting_media_hero_images_path,
+                     cancel_path: admin_media_page_setting_path

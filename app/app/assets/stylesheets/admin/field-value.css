@@ -5,7 +5,7 @@
 }
 
 .admin-field-value-image {
-  width: 200px;
+  width: fit-content;
   height: 200px;
   border: 1px solid var(--default-border-color);
 }

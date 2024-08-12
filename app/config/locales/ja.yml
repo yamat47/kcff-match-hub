@@ -76,6 +76,9 @@ ja:
       notice/published:
         published: 公開中
         unpublished: 非公開
+      media_hero_image:
+        universal_id: ID
+        image: 画像
 
   date:
     abbr_day_names:
@@ -287,6 +290,8 @@ ja:
           index: シーズン
         notices:
           index: お知らせ
+        media_page_settings:
+          show: Webページ設定
       button:
         new: 追加する
         edit: 編集する

@@ -36,6 +36,10 @@
     color: var(--color-gray-900);
     white-space: nowrap;
   }
+
+  &.is-image {
+    height: fit-content;
+  }
 }
 
 .admin-list-cell-with-icon {

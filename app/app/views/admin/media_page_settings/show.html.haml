@@ -1,0 +1,40 @@
+:ruby
+  add_breadcrumb t('view.admin.breadcrumbs.media_page_settings.show')
+
+.admin-content
+  .admin-content__title
+    .admin-title
+      .admin-title__image
+        = image_tag 'icon-setting.png', class: 'admin-title-image'
+      .admin-title__text
+        %h1.admin-title_text
+          = t('view.admin.breadcrumbs.media_page_settings.show')
+
+  .admin-content__main
+    .admin-content-main
+      .admin-content-main__sections
+        .admin-content-sections
+          .admin-content-sections__section
+            %section.admin-content-section
+              .admin-content-section__title
+                %h2.admin-content-section-title
+                  .admin-content-section-title__text
+                    ヒーロー画像
+              .admin-content-section__fields
+                %table.admin-list
+                  %thead.admin-list__header.admin-list-header
+                    %tr.admin-list-row
+                      %th.admin-list-cell.is-header
+                        = MediaHeroImage.human_attribute_name :universal_id
+                      %th.admin-list-cell.is-header
+                        = MediaHeroImage.human_attribute_name :image
+                      %th.admin-list-cell.is-header
+                  %tbody.admin-list__body.admin-list-body
+                    - @media_hero_images.each do |media_hero_image|
+                      %tr.admin-list-row
+                        %td.admin-list-cell
+                          .admin-list-cell
+                            = media_hero_image.universal_id
+                        %td.admin-list-cell
+                          .admin-list-cell.is-image
+                            = image_tag media_hero_image.image, class: 'admin-list-cell-image'

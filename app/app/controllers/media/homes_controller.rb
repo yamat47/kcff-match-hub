@@ -5,6 +5,8 @@ module Media
     NOTICES_LIMIT = 3
 
     def show
+      @media_hero_images = MediaHeroImage.sort_order_ordered
+
       @notices = Notice.only_published
                        .published_at_ordered
                        .limit(NOTICES_LIMIT)

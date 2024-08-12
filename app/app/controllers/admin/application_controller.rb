@@ -2,6 +2,11 @@
 
 module Admin
   class ApplicationController < ::ApplicationController
+    if Rails.env.production?
+      http_basic_authenticate_with(name: ENV.fetch('ADMIN_BASIC_AUTH_NAME'),
+                                   password: ENV.fetch('ADMIN_BASIC_AUTH_PASSWORD'))
+    end
+
     layout 'admin/application'
 
     before_action :check_logged_in

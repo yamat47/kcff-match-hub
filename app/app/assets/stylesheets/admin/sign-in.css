@@ -1,0 +1,13 @@
+.admin-sign-in-form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-sign-in-form-logo {
+  width: 24rem;
+}

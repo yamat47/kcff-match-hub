@@ -2,6 +2,7 @@
   add_breadcrumb t('view.admin.breadcrumbs.administrators.index'), admin_administrators_path
   add_breadcrumb @administrator.universal_id, admin_administrator_path(@administrator)
   add_breadcrumb t('view.admin.breadcrumbs.actions.edit')
+  content_for(:title, t('view.admin.page_title.administrators.edit', universal_id: @administrator.universal_id))
 
 .admin-content
   .admin-content__title

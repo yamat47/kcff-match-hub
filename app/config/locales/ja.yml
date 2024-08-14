@@ -266,6 +266,60 @@ ja:
 
   view:
     admin:
+      page_title:
+        sessions:
+          new: ログイン
+        dashboard:
+          show: ダッシュボード
+        administrators:
+          index: 管理者一覧
+          new: 管理者追加
+          edit: 管理者編集（%{universal_id}）
+          show: 管理者詳細（%{universal_id}）
+        game_fields:
+          index: 試合会場一覧
+          new: 試合会場追加
+          edit: 試合会場編集（%{universal_id}）
+          show: 試合会場詳細（%{universal_id}）
+        tournaments:
+          index: 大会一覧
+          new: 大会追加
+          edit: 大会編集（%{universal_id}）
+          show: 大会詳細（%{universal_id}）
+        teams:
+          index: チーム一覧
+          new: チーム追加
+          edit: チーム編集（%{universal_id}）
+          show: チーム詳細（%{universal_id}）
+          logos:
+            new: ロゴ画像編集（%{universal_id}）
+            edit: ロゴ画像編集（%{universal_id}）
+          team_profiles:
+            new: チームプロフィール編集（%{universal_id}）
+            edit: チームプロフィール編集（%{universal_id}）
+        seasons:
+          index: シーズン一覧
+          new: シーズン追加
+          edit: シーズン編集（%{universal_id}）
+          show: シーズン詳細（%{universal_id}）
+        game_schedules:
+          index: 試合一覧
+          new: 試合追加
+          edit: 試合編集（%{universal_id}）
+          show: 試合詳細（%{universal_id}）
+          game_results:
+            new: 試合結果編集（%{universal_id}）
+            edit: 試合結果編集（%{universal_id}）
+        notices:
+          index: お知らせ一覧
+          new: お知らせ追加
+          edit: お知らせ編集（%{universal_id}）
+          show: お知らせ詳細（%{universal_id}）
+        media_page_settings:
+          show: Webページ設定
+          media_hero_images:
+            new: ヒーロー画像追加
+            edit: ヒーロー画像編集
       breadcrumbs:
         actions:
           new: 追加

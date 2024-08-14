@@ -1,6 +1,7 @@
 :ruby
   add_breadcrumb t('view.admin.breadcrumbs.tournaments.index'), admin_tournaments_path
   add_breadcrumb @tournament.name
+  content_for(:title, t('view.admin.page_title.tournaments.show', universal_id: @tournament.universal_id))
 
 .admin-content
   .admin-content__title

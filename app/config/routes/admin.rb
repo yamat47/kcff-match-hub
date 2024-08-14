@@ -4,7 +4,7 @@ namespace :admin do
   root 'dashboards#show'
 
   resource :session, only: %i[new create destroy]
-  resource :dashboards, only: [:show]
+  resource :dashboard, only: [:show]
   resources :administrators
   resources :game_fields
   resources :tournaments

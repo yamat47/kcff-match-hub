@@ -2,6 +2,7 @@
   add_breadcrumb t('view.admin.breadcrumbs.game_schedules.index'), admin_game_schedules_path
   add_breadcrumb @game_schedule.name, admin_game_schedule_path(@game_schedule)
   add_breadcrumb t('view.admin.breadcrumbs.actions.edit')
+  content_for(:title, t('view.admin.page_title.game_schedules.edit', universal_id: @game_schedule.universal_id))
 
 .admin-content
   .admin-content__title

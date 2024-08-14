@@ -1,6 +1,7 @@
 :ruby
   add_breadcrumb t('view.admin.breadcrumbs.notices.index'), admin_notices_path
   add_breadcrumb @notice.title
+  content_for(:title, t('view.admin.page_title.notices.show', universal_id: @notice.universal_id))
 
 .admin-content
   .admin-content__title

@@ -1,5 +1,6 @@
 :ruby
   add_breadcrumb t('view.admin.breadcrumbs.dashboard')
+  content_for(:title, t('view.admin.page_title.dashboard.show'))
 
 - if logged_in?
   = current_administrator.email

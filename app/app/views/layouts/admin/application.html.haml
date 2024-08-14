@@ -1,8 +1,10 @@
 !!!
 %html
   %head
-    %title 管理画面 | KCFF Match Hub
+    %title
+      = admin_page_title(content_for(:title))
     %meta{ content: 'width=device-width,initial-scale=1', name: 'viewport' }
+    %meta{ name: 'robots', content: 'noindex, nofollow' }
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'admin', 'data-turbo-track': 'reload'

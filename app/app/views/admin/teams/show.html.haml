@@ -1,6 +1,7 @@
 :ruby
   add_breadcrumb t('view.admin.breadcrumbs.teams.index'), admin_teams_path
   add_breadcrumb @team.name
+  content_for(:title, t('view.admin.page_title.teams.show', universal_id: @team.universal_id))
 
 .admin-content
   .admin-content__title

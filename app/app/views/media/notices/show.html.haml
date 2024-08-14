@@ -2,6 +2,7 @@
   add_breadcrumb t('view.media.breadcrumbs.root'), root_path
   add_breadcrumb t('view.media.breadcrumbs.notices.index'), notices_path
   add_breadcrumb @notice.title
+  content_for(:title, @notice.title)
 
 .media-list
   .media-list__content

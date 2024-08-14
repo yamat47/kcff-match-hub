@@ -2,6 +2,7 @@
   add_breadcrumb t('view.admin.breadcrumbs.game_fields.index'), admin_game_fields_path
   add_breadcrumb @game_field.name, admin_game_field_path(@game_field)
   add_breadcrumb t('view.admin.breadcrumbs.actions.edit')
+  content_for(:title, t('view.admin.page_title.game_fields.edit', universal_id: @game_field.universal_id))
 
 .admin-content
   .admin-content__title

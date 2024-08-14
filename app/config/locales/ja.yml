@@ -372,6 +372,15 @@ ja:
           start_at: K.O.
           tournament: 大会
           teams: 対戦チーム
+      page_title:
+        game_fields:
+          index: 試合会場
+        teams:
+          index: 所属チーム
+        game_schedules:
+          index: 日程・結果（%{season}）
+        notices:
+          index: お知らせ
       breadcrumbs:
         root: トップページ
         game_fields:

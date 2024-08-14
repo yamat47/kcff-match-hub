@@ -7,11 +7,11 @@ module Media
     before_action :ensure_season_param
 
     def index
-      season = Season.find_by!(short_name: params[:season])
+      @season = Season.find_by!(short_name: params[:season])
 
       game_schedules = GameSchedule.start_at_ordered
                                    .game_field_ordered
-                                   .where(season:)
+                                   .where(season: @season)
                                    .preload(:home_team, :visitor_team, :game_field, :tournament)
 
       # group by date.

@@ -12,7 +12,7 @@ module Media
       game_schedules = GameSchedule.start_at_ordered
                                    .game_field_ordered
                                    .where(season: @season)
-                                   .preload(:home_team, :visitor_team, :game_field, :tournament)
+                                   .preload(:home_team, :visitor_team, :game_field, :tournament, :game_result)
 
       # group by date.
       @game_schedule_groups = game_schedules.group_by { |game_schedule| game_schedule.start_at.to_date }

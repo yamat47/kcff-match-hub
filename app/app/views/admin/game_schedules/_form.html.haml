@@ -31,7 +31,7 @@
           = GameSchedule.human_attribute_name(:home_team)
         .admin-field__value
           = form.select_with_image(:home_team_id,
-                                   Team.all,
+                                   Team.preload({ logo_attachment: :blob }),
                                    value_method: :id,
                                    text_method: :name,
                                    image_method: :logo_url,
@@ -43,7 +43,7 @@
           = GameSchedule.human_attribute_name(:visitor_team)
         .admin-field__value
           = form.select_with_image(:visitor_team_id,
-                                   Team.all,
+                                   Team.preload({ logo_attachment: :blob }),
                                    value_method: :id,
                                    text_method: :name,
                                    image_method: :logo_url,

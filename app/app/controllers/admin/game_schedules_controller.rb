@@ -7,6 +7,7 @@ module Admin
     def index
       @game_schedules = GameSchedule.start_at_ordered
                                     .search_by_keyword(index_params[:search])
+                                    .preload(:season, :tournament, :home_team, :visitor_team, :game_field)
                                     .page(index_params[:page])
                                     .per(INDEX_PER_PAGE)
     end

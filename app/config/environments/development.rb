@@ -76,5 +76,8 @@ Rails.application.configure do
     Bullet.rails_logger = true
     Bullet.add_footer = true
     Bullet.skip_html_injection = false
+
+    Bullet.add_safelist type: :unused_eager_loading, class_name: 'ActiveStorage::Attachment',
+                        association: :blob
   end
 end

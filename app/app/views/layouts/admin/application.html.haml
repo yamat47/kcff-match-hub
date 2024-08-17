@@ -10,6 +10,7 @@
     = stylesheet_link_tag 'admin', 'data-turbo-track': 'reload'
     = javascript_importmap_tags
     %meta{ name: 'turbo-prefetch', content: 'true' }
+    %meta{ name: 'view-transition', content: 'same-origin' }
   %body
     - if logged_in?
       .application

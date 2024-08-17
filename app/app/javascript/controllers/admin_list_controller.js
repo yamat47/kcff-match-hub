@@ -6,6 +6,6 @@ export default class extends Controller {
 
     const href = event.currentTarget.dataset.href
 
-    window.location.href = href
+    Turbo.visit(href)
   }
 }
